@@ -7162,6 +7162,28 @@
             <Italian>Se abilitato, un backup della missione.sqm verrà creato quando lo scenario viene salvato o autosalvato.\nIl backup viene salvato all'interno della cartella dello scenario.\nPer far funzionare questo meccanismo di backup è necessaria la modifica di Pythia.\nMa assicuratevi di fare un backup del vostro scenario prima di abilitare questa opzione per la prima volta!</Italian>
             <Polish>Jeśli opcja ta jest włączona, kopia zapasowa pliku mission.sqm zostanie utworzona podczas zapisywania lub automatycznego zapisywania scenariusza. Kopie zapasowe są zapisywane w folderze scenariusza. Aby ten mechanizm tworzenia kopii zapasowych działał, wymagana jest modyfikacja Pythia. Upewnij się, że utworzyłeś kopię zapasową scenariusza przed włączeniem tej opcji po raz pierwszy!</Polish>
         </Key>
+        <Key ID="STR_ENH_MAIN_BACKUPMISSIONSQMBLACKLIST_DISPLAYNAME">
+            <English>Blacklist</English>
+            <Russian>Черный список</Russian>
+            <German>Blacklist</German>
+            <French>Liste noire</French>
+            <Spanish>Lista negra</Spanish>
+            <Chinesesimp>黑名单</Chinesesimp>
+            <Chinese>黑名單</Chinese>
+            <Italian>Lista nera</Italian>
+            <Polish>Czarna lista</Polish>
+        </Key>
+        <Key ID="STR_ENH_MAIN_BACKUPMISSIONSQMBLACKLIST_TOOLTIP">
+            <English>If the 'missionName' is found in this list no backups will be created.</English>
+            <Russian>Если имя 'missionName' найдено в этом списке, резервные копии создаваться не будут.</Russian>
+            <German>Wenn der 'missionName' in dieser Liste gefunden wird, werden keine Sicherungen erstellt.</German>
+            <French>Si le 'missionName' se trouve dans cette liste, aucune sauvegarde ne sera créée.</French>
+            <Spanish>Si el 'missionName' se encuentra en esta lista no se creará ninguna copia de seguridad.</Spanish>
+            <Chinesesimp>如果在此列表中找到 “任务名称”，则不会创建备份。</Chinesesimp>
+            <Chinese>如果在此清單中找到「missionName」，則不會建立備份。</Chinese>
+            <Italian>Se 'missionName' viene trovato in questo elenco, non verranno creati backup.</Italian>
+            <Polish>Jeśli „missionName” znajduje się na tej liście, żadne kopie zapasowe nie zostaną utworzone.</Polish>
+        </Key>
         <Key ID="STR_ENH_MAIN_BACKUPMISSIONSQMPATH_DISPLAYNAME">
             <English>Path for mission backups</English>
             <Russian>Путь для резервных копий миссий</Russian>
@@ -10144,7 +10166,7 @@
             <Spanish>Alinear con X+</Spanish>
             <French>Aligner sur X+</French>
         </Key>
-        <Key ID="STR_ENH_OBJECT_ATTRIBUTES_EVENT_HANDLERS">
+        <Key ID="STR_ENH_MAIN_OBJECT_ATTRIBUTES_EVENT_HANDLERS">
             <English>Event Handlers are triggered upon certain events. The event handler is added where the entity is local. Event parameters are passed to it via the &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt; variable. See &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Arma 3 - Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt; for more information.</English>
             <German>Event-Handler werden zu bestimmten Ereignissen ausgelöst. Der Event-Handler wird dort hinzugefügt wo die Entität lokal ist. Ereignisparamter stehen in &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt; Variable zur Verfügung. Mehr Informationen findest du auf &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Arma 3 - Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt;.</German>
             <French>Les gestionnaires d'événements sont déclenchés par certains événements. Le gestionnaire d'événements est ajouté là où l'entité est locale. Les paramètres de l'événement lui sont transmis par l'intermédiaire de la variable &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt;.  Arma 3 - &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Event Handlers&lt;/a&gt; et &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt; pour plus d'informations.</French>
