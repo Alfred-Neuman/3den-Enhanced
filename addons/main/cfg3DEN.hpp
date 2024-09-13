@@ -140,6 +140,7 @@ class Cfg3DEN
         #include "controls\missionEndingCasualties.hpp"
         #include "controls\subCategoryNoHeader_Fixed.hpp"
         #include "controls\sliderMulti120.hpp"
+        #include "controls\inputList.hpp"
     };
     class Mission
     {
@@ -185,6 +186,7 @@ class Cfg3DEN
                 #include "attributesMission\missionEnding.hpp"
                 #include "attributesMission\volume.hpp"
                 #include "attributesMission\SPR.hpp"
+                #include "attributesMission\missionEventHandlers.hpp"
                 class Misc
                 {
                     class Attributes
@@ -251,7 +253,6 @@ class Cfg3DEN
                     #include "attributesObject\engineOn.hpp"
                     #include "attributesObject\disableNVGE.hpp"
                     #include "attributesObject\disableTIE.hpp"
-                    #include "attributesObject\limitSpeed.hpp"
                     #include "attributesObject\doStop.hpp"
                     #include "attributesObject\removeFromRemainsCollector.hpp"
                     #include "attributesObject\SPRTickets.hpp"
@@ -262,7 +263,6 @@ class Cfg3DEN
                 class Attributes
                 {
                     #include "attributesObject\objectScale.hpp"
-                    #include "attributesObject\setMass.hpp"
                 };
             };
             class Inventory
@@ -279,6 +279,10 @@ class Cfg3DEN
                 {
                     #include "attributesObject\featureType.hpp"
                     #include "attributesObject\forceFlag.hpp"
+                    #include "attributesObject\setMass.hpp"
+                    #include "attributesObject\waterLeakiness.hpp"
+                    #include "attributesObject\limitSpeed.hpp"
+                    #include "attributesObject\fuelConsumptionCoef.hpp"
                 };
             };
         };

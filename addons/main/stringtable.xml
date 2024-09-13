@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="ENH">
     <Package name="Main">
+        <Key ID="STR_ENH_MAIN_INPUTLIST_REMOVE_TOOLTIP">
+            <English>Multiple entries can be added at once by separating them with a space, a comma or a semicolon.</English>
+            <Czech>Více záznamů najednou lze přidat tak, že je oddělíte mezerou, čárkou nebo středníkem.</Czech>
+            <French>Il est possible d'ajouter plusieurs entrées à la fois en les séparant par un espace, une virgule ou un point-virgule.</French>
+            <Spanish>Se pueden añadir varias entradas a la vez separándolas con un espacio, una coma o un punto y coma.</Spanish>
+            <German>Mehrere Einträge können auf einmal hinzugefügt werden, indem sie durch ein Leerzeichen, ein Komma oder ein Semikolon getrennt werden.</German>
+            <Chinesesimp>用空格、逗号或分号分隔可同时添加多个条目。</Chinesesimp>
+            <Chinese>可以用空格、逗號或分號分隔，一次加入多個項目。</Chinese>
+            <Polish>Można dodać wiele wpisów jednocześnie, oddzielając je spacją, przecinkiem lub średnikiem.</Polish>
+            <Italian>È possibile aggiungere più voci contemporaneamente separandole con uno spazio, una virgola o un punto e virgola.</Italian>
+            <Portuguese>Podem ser adicionadas várias entradas de uma só vez, separando-as com um espaço, uma vírgula ou um ponto e vírgula.</Portuguese>
+            <Russian>Можно добавить сразу несколько записей, разделив их пробелом, запятой или точкой с запятой.</Russian>
+        </Key>
+        <Key ID="STR_ENH_MAIN_INPUTLIST_ADD_TOOLTIP">
+            <English>Removes selected entry from the list.</English>
+            <Czech>Odebere vybranou položku ze seznamu.</French>
+            <Spanish>Elimina la entrada seleccionada de la lista.</Spanish>
+            <German>Entfernt den ausgewählten Eintrag aus der Liste.</German>
+            <Chinesesimp>从列表中删除所选条目。</Chinesesimp>
+            <Chinese>從清單中移除選取的項目。</Chinese>
+            <Polish>Usuwa wybraną pozycję z listy.</Polish>
+            <Italian>Rimuove la voce selezionata dall'elenco.</Italian>
+            <Portuguese>Remove a entrada selecionada da lista.</Portuguese>
+            <Russian>Удаляет выбранную запись из списка.</Russian>
+        </Key>
+        <Key ID="STR_ENH_MAIN_WATERLEAKINESS_DISPLAYNAME">
+            <English>Leakage</English>
+            <Czech>Únik</Czech>
+            <French>Fuite</French>
+            <Spanish>Fugas</Spanish>
+            <German>Undichtigkeit</German>
+            <Chinesesimp>渗漏</Chinesesimp>
+            <Chinese>洩漏</Chinese>
+            <Polish>Wyciek</Polish>
+            <Italian>Perdite</Italian>
+            <Portuguese>Fugas</Portuguese>
+            <Russian>Утечка</Russian>
+        </Key>
+        <Key ID="STR_ENH_MAIN_WATERLEAKINESS_TOOLTIP">
+            <English>Defines how quickly the vehicle will be filled with water. A smaller value means it takes longer for it to get filled.</English>
+            <Czech>Určuje, jak rychle se vozidlo naplní vodou. Menší hodnota znamená, že naplnění trvá déle.</Czech>
+            <French>Définit la vitesse à laquelle le véhicule sera rempli d'eau. Une valeur plus petite signifie qu'il faut plus de temps pour le remplir.</French>
+            <Spanish>Define la rapidez con la que el vehículo se llenará de agua. Un valor menor significa que tardará más en llenarse.</Spanish>
+            <German>Legt fest, wie schnell das Fahrzeug mit Wasser befüllt wird. Ein kleinerer Wert bedeutet, dass es länger dauert, bis es gefüllt ist.</German>
+            <Chinesesimp>定义车辆注水的速度。数值越小，表示注水时间越长。</Chinesesimp>
+            <Chinese>定義車輛注水的速度。較小的值表示需要較長的時間才能注滿。</Chinese>
+            <Polish>Określa, jak szybko pojazd zostanie napełniony wodą. Mniejsza wartość oznacza, że napełnianie trwa dłużej.</Polish>
+            <Italian>Definisce la velocità con cui il veicolo viene riempito d'acqua. Un valore più piccolo significa che il veicolo impiega più tempo a riempirsi.</Italian>
+            <Portuguese>Define a rapidez com que o veículo é enchido com água. Um valor mais pequeno significa que o veículo demora mais tempo a encher-se.</Portuguese>
+            <Russian>Определяет, как быстро автомобиль будет заполнен водой. Меньшее значение означает, что заполнение займет больше времени.</Russian>
+        </Key>
         <Key ID="STR_ENH_MAIN_SOUNDVOLUME_DISPLAYNAME">
             <English>Volume (Sound)</English>
             <Czech>Hlasitost zvuku</Czech>
@@ -986,6 +1037,30 @@
             <Chinese>添加武器庫到對像中</Chinese>
             <Polish>Dodaje do obiektu arsenał ze wszystkimi przedmiotami w grze.</Polish>
             <Russian>Добавляет арсенал со всеми предметами к объекту.</Russian>
+        </Key>
+        <Key ID="STR_ENH_MAIN_FUELCONSUMPTIONCOEF_DISPLAYNAME">
+            <English>Fuel Consumption Coefficient</English>
+            <Italian>Coefficiente di consumo del carburante</Italian>
+            <Czech>Koeficient spotřeby paliva</Czech>
+            <French>Coefficient de consommation de carburant</French>
+            <Spanish>Coeficiente de consumo de combustible</Spanish>
+            <German>Koeffizient des Kraftstoffverbrauchs</German>
+            <Chinesesimp>燃料消耗系数</Chinesesimp>
+            <Chinese>耗油系數</Chinese>
+            <Polish>Współczynnik zużycia paliwa</Polish>
+            <Russian>Коэффициент расхода топлива</Russian>
+        </Key>
+        <Key ID="STR_ENH_MAIN_FUELCONSUMPTIONCOEF_TOOLTIP">
+            <English>Sets the fuel consumption coefficient, which is a multiplier of the fuel consumption rate in config. It doesn't affect fuel leakage or refueling.</English>
+            <Italian>Imposta il coefficiente di consumo di carburante, che è un moltiplicatore del tasso di consumo di carburante in configurazione. Non influisce sulla perdita di carburante o sul rifornimento.</Italian>
+            <Czech>Nastavuje koeficient spotřeby paliva, který je násobitelem míry spotřeby paliva v konfiguraci. Nemá vliv na únik paliva ani na doplňování paliva.</Czech>
+            <French>Définit le coefficient de consommation de carburant, qui est un multiplicateur du taux de consommation de carburant dans la configuration. Il n'affecte pas les fuites de carburant ni le ravitaillement.</French>
+            <Spanish>Establece el coeficiente de consumo de combustible, que es un multiplicador de la tasa de consumo de combustible en config. No afecta a la fuga de combustible ni al repostaje.</Spanish>
+            <German>设置燃料消耗系数，它是配置中燃料消耗率的乘数。它不会影响燃料泄漏或加油。</German>
+            <Chinesesimp>燃料消耗系数</Chinesesimp>
+            <Chinese>設定燃料消耗系數，它是配置中燃料消耗率的乘數。它不會影響燃料洩漏或加油。</Chinese>
+            <Polish>Ustawia współczynnik zużycia paliwa, który jest mnożnikiem współczynnika zużycia paliwa w konfiguracji. Nie ma wpływu na wyciek paliwa ani tankowanie.</Polish>
+            <Russian>Устанавливает коэффициент расхода топлива, который представляет собой множитель нормы расхода топлива в конфиге. Он не влияет на утечку топлива или дозаправку.</Russian>
         </Key>
         <Key ID="STR_ENH_MAIN_ALLOWSPRINTING_DISPLAYNAME">
             <English>Allow Sprinting</English>
@@ -10177,7 +10252,31 @@
             <Spanish>Alinear con X+</Spanish>
             <French>Aligner sur X+</French>
         </Key>
-        <Key ID="STR_ENH_MAIN_OBJECT_ATTRIBUTES_EVENT_HANDLERS">
+        <Key ID="STR_ENH_MAIN_ATTRIBUTES_EVENT_HANDLERS_DISPLAYNAME">
+            <English>Events</English>
+            <German>Ereignisse</German>
+        </Key>
+        <Key ID="STR_ENH_MAIN_OBJECT_ATTRIBUTES_EVENT_HANDLERS_DESCRIPTION">
+            <English>Event Handlers are triggered upon certain events. The event handler is added where the entity is local. Event parameters are passed to it via the &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt; variable. See &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Arma 3 - Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt; for more information.</English>
+            <German>Event-Handler werden zu bestimmten Ereignissen ausgelöst. Der Event-Handler wird dort hinzugefügt wo die Entität lokal ist. Ereignisparamter stehen in &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt; Variable zur Verfügung. Mehr Informationen findest du auf &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Arma 3 - Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt;</German>
+        </Key>
+        <Key ID="STR_ENH_MAIN_MISSION_ATTRIBUTES_EVENT_HANDLERS_GLOBAL_DISPLAYNAME">
+            <English>Mission Events - Global</English>
+            <German>Missionsereignisse - Global</German>
+        </Key>
+        <Key ID="STR_ENH_MAIN_MISSION_ATTRIBUTES_EVENT_HANDLERS_GLOBAL_DESCRIPTION">
+            <English>Event Handlers are triggered upon certain events. The event handler is added globally. See &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3: Mission_Event_Handlers'&gt;Arma 3 - Mission Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addMissionEventHandler'&gt;addMissionEventHandler&lt;/a&gt; for more information. The event ID is available through the variable 'ENH_MissionEventHandlers_EVENTNAME_ID'.</English>
+            <German>Event-Handler werden zu bestimmten Ereignissen ausgelöst. Der Event-Handler wird global hinzugefügt. Mehr Informationen findest du auf &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:Mission_Event_Handlers'&gt;Arma 3 - Mission Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addMissionEventHandler'&gt;addMissionEventHandler&lt;/a&gt;. Die Ereignis-ID steht in der 'ENH_MissionEventHandlers_EVENTNAME_ID' variable zur Verfügung.</German>
+        </Key>
+        <Key ID="STR_ENH_MAIN_MISSION_ATTRIBUTES_EVENT_HANDLERS_SERVER_DISPLAYNAME">
+            <English>Mission Events - Server</English>
+            <German>Missionsereignisse - Server</German>
+        </Key>
+        <Key ID="STR_ENH_MAIN_MISSION_ATTRIBUTES_EVENT_HANDLERS_SERVER_DESCRIPTION">
+            <English>Event Handlers are triggered upon certain events. The event handler is added on the server only. See &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3: Mission_Event_Handlers'&gt;Arma 3 - Mission Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addMissionEventHandler'&gt;addMissionEventHandler&lt;/a&gt; for more information. The event ID is available through the variable 'ENH_MissionEventHandlers_EVENTNAME_ID'.</English>
+            <German>Event-Handler werden zu bestimmten Ereignissen ausgelöst. Der Event-Handler wird dort hinzugefügt wo die Entität lokal ist. Mehr Informationen findest du auf &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:Mission_Event_Handlers'&gt;Arma 3 - Mission Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addMissionEventHandler'&gt;addMissionEventHandler&lt;/a&gt;. Die Ereignis-ID steht in der 'ENH_MissionEventHandlers_EVENTNAME_ID' variable zur Verfügung.</German>
+        </Key>
+        <Key ID="STR_ENH_MAIN_GROUP_ATTRIBUTES_EVENT_HANDLERS_DESCRIPTION">
             <English>Event Handlers are triggered upon certain events. The event handler is added where the entity is local. Event parameters are passed to it via the &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt; variable. See &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Arma 3 - Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt; for more information.</English>
             <German>Event-Handler werden zu bestimmten Ereignissen ausgelöst. Der Event-Handler wird dort hinzugefügt wo die Entität lokal ist. Ereignisparamter stehen in &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt; Variable zur Verfügung. Mehr Informationen findest du auf &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Arma 3 - Event Handlers&lt;/a&gt; and &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt;.</German>
             <French>Les gestionnaires d'événements sont déclenchés par certains événements. Le gestionnaire d'événements est ajouté là où l'entité est locale. Les paramètres de l'événement lui sont transmis par l'intermédiaire de la variable &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Magic_Variables#this'&gt;_this&lt;/a&gt;.  Arma 3 - &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/Arma_3:_Event_Handlers'&gt;Event Handlers&lt;/a&gt; et &lt;t colorLink='#e69710'&gt;&lt;a href='https://community.bistudio.com/wiki/addEventHandler'&gt;addEventHandler&lt;/a&gt; pour plus d'informations.</French>

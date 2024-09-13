@@ -5,7 +5,10 @@
 - Added object event handler attributes
 - Added group event handler attributes
 - Added import from clipboard function to ESE #306 (Thanks to Pixelated-Grunt)
-- Added blacklist for mission.sqm backup.
+- Added blacklist for mission.sqm backup
+- Added water leakiness can now be set for vehicles
+- Added mission event handler attributes
+- Added fuel consumption coef. attribute
 
 ## CHANGED
 - 3den Enhanced is now build with HEMTT
@@ -56,6 +59,9 @@
     - Added categories
     - Improved UI layout
 - Updated French translation thanks to Alfred-Neuman
+- Added InputList attribute control
+- Moved mass attribute from transformation category to state category
+- Moved limit speed attribute from special states category to state category
 
 ## REMOVED
 - Customization via userconfig

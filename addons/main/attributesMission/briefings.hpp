@@ -1,4 +1,4 @@
-class ENH_Briefing //TODO: Make order of creation fixed 2024-01-13 R3vo
+class ENH_Briefing
 {
     collapsed = 1;
     displayName = "$STR_A3_CFGDIARY_FIXEDPAGES_DIARY";
@@ -7,7 +7,7 @@ class ENH_Briefing //TODO: Make order of creation fixed 2024-01-13 R3vo
         class ENH_Briefing_BLUFOR_Subcategory
         {
             description = "$STR_WEST";
-            data = "AttributeSystemSubcategory";
+            property = "ENH_Briefing_BLUFOR_Subcategory";
             control = "ENH_SubCategoryNoHeader1_Fixed";
         };
         class ENH_Briefing_BLUFOR_Situation
