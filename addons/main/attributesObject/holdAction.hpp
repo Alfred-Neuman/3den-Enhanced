@@ -7,7 +7,7 @@ class ENH_HoldAction
         class ENH_HoldAction_Subcategory
         {
             description = "$STR_ENH_MAIN_HOLDACTION_DESCRIPTION";
-            property = "ENH_HoldAction_Subcategory";
+            data = "AttributeSystemSubcategory";
             control = "ENH_SubCategoryNoHeader1_Fixed";
         };
         class ENH_HoldAction
@@ -18,7 +18,7 @@ class ENH_HoldAction
             control = "ENH_HoldAction";
             expression = "\
             _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow'];\
-            if (!is3DEN && !(_name isEqualTo '')) then\
+            if (!is3DEN && (_name != '')) then\
             {\
                 [\
                     _this,\
