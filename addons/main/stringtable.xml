@@ -523,6 +523,7 @@
         <Key ID="STR_ENH_MAIN_AMBIENTFLYBY_CLASSES_TOOLTIP">
             <English>Select the vehicles you want to spawn. Each turn a random one is picked.</English>
             <German>Wähle die Fahrzeuge aus, die du spawnen willst. Jede Runde wird ein zufälliges Fahrzeug ausgewählt.</German>
+            <French>Choisis les véhicules que tu veux faire apparaître. Chaque tour, un véhicule est choisi au hasard.</French>
         </Key>
         <Key ID="STR_ENH_MAIN_AMBIENTFLYBY_DESCRIPTION">
             <English>Spawns an air unit that moves from point A to point B, never engaging nor being engaged. It is set as captive and will despawn once it reaches its destination. Flybys can be stopped by setting 'ENH_AmbientFlyby_Enabled' to false on the server machine.</English>
