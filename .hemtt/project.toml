@@ -164,5 +164,5 @@ parameters = [
     "-server",
     "-port=2302",
     "-loadMissionToMemory",
-    "-config=C:\\Users\\rober\\OneDrive\\Games\\Arma 3\\Arma 3 Mods\\3den-Enhanced\\.hemtt\\server.cfg"
+    "-config=D:\\Repositories\\3den-Enhanced\\.hemtt\\server.cfg"
 ]
