@@ -17,4 +17,4 @@
 
 params ["_object"];
 
-getNumber (configFile >> "CfgVehicles" >> typeOf _object >> "maximumLoad") > 0
+getNumber (configOf _object >> "maximumLoad") > 0

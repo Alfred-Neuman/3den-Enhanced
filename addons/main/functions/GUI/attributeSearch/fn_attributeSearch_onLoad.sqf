@@ -81,7 +81,7 @@ ENH_AttributeSearch_AttributesCounter_Valid = 0;
             };
             case (_entity in _objects or _entity in _systems):
             {
-                format ["%1 - %2", [configFile >> "CfgVehicles" >> typeOf _entity] call BIS_fnc_displayName, ATT(_entity,"name")];
+                format ["%1 - %2", [configOf _entity] call BIS_fnc_displayName, ATT(_entity,"name")];
             };
             case (_entity in _triggers):
             {

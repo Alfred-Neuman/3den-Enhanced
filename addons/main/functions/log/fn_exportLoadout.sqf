@@ -67,7 +67,7 @@ if _mode then
 }
 else
 {// CfgRespawnLoadout
-    private _displayName = format ["displayName = ""%1"";", getText (configFile >> "CfgVehicles" >> typeOf _object >> "displayName")];
+    private _displayName = format ["displayName = ""%1"";", getText (configOf _object >> "displayName")];
     private _icon = "icon = ""\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"";";
     private _role = "role = ""Default"";";
     private _show = "show = ""true"";";
