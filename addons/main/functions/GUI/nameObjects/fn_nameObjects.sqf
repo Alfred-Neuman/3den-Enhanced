@@ -60,7 +60,7 @@ CTRL(IDC_NAMEOBJECTS_SET_NAME) ctrlAddEventHandler ["ButtonClick",
             _x set3DENAttribute ["Name", format ["%1_%2", _varName, _index]];
             _x set3DENAttribute ["markerName", format ["%1_%2", _varName, _index]];
             _index = _index + 1;
-        } forEach (_display getVariable ["SelectedEntities", []]);;
+        } forEach (_display getVariable ["SelectedEntities", []]);
     };
 
     profileNamespace setVariable ["ENH_NameObjects_LastVarName", _varName];
