@@ -1,4 +1,11 @@
 # 8.7.1
+## CHANGED
+- Complete overhaul of Module Information UI. It now shows entites that can be synced similar to the old editor
+
+## FIXED
+- Module Information UI would not show all descriptions of all modules
+
+# 8.7.1
 ## ADDED
 - Added fn_iterTree.sqf (internal use only)
 - CTRL + ALT + SPACE opens 3DEN Command Palette now, in addition to ALT + SPACE

@@ -239,7 +239,10 @@ class CfgFunctions
         class ModuleInformation
         {
             file = "\x\enh\addons\main\functions\GUI\moduleInformation";
-            class moduleInformation_onLoad {};
+            class MI_createSyncPreview {};
+            class MI_formatInformationData {};
+            class MI_getInformationData {};
+            class MI_onLoad {};
         };
         class MoveToLayer
         {
