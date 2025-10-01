@@ -20,9 +20,9 @@ params ["_message"];
 
 private _data = uiNamespace getVariable ["ENH_Log_Data", []];
 
-if !(_msg isEqualType "") then
+if !(_message isEqualType "") then
 {
-    _msg = str _msg;
+    _message = str _message;
 };
 
 _data append [[diag_tickTime, _message]];
