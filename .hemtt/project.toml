@@ -18,7 +18,7 @@ exclude = [
 [version]
 major = 8
 minor = 7
-patch = 1
+patch = 2
 git_hash = 0
 
 [hemtt.build]
@@ -71,7 +71,7 @@ workshop = [
     # Pythia
     "1751569185",
     # 7erra's Editing Extensions
-    "1387934106",
+    # "1387934106",
     # 3Den Stringtable Viewer
     "2073243184",
     # Debug Console
