@@ -18,6 +18,7 @@
 #define RADIUS 150
 #define DELAY 0.1
 #define HINT_REFRESH_INTERVAL 30
+#define COLOR_TRIGGER 0.1, 0.1, 0.9, 1
 #define HINT_TEXT\
 "<t size='1.3' align='center'>Trigger Information</t><br/>\
 <t align='left'>Name:<t/><t align='right'>%1</t><br/>\
@@ -688,71 +689,81 @@ if (GETVALUE("DebugPath") > 0) then
 
 if GETVALUE("DrawTriggers") then
 {
-    ENH_DebugOptions_DrawTriggers_CursorPosition = [0, 0, 0];
+    private _ctrlMap = findDisplay IDD_MAIN_MAP displayCtrl IDC_MAP;
+
+    _ctrlMap ctrlAddEventHandler ["Draw",
     {
-        findDisplay IDD_MAIN_MAP displayCtrl IDC_MAP ctrlAddEventHandler ["Draw",
+        params ["_ctrlMap"];
+
+        // Draw triggers
         {
-            params ["_ctrlMap"];
             private _trigger = _x;
             triggerArea _trigger params ["_a", "_b", "_angle", "_isRectangle"];
 
-            if (!_isRectangle) then
+            _ctrlMap drawIcon
+            [
+                "a3\3den\data\displays\display3den\panelright\modetriggers_ca.paa",
+                [COLOR_TRIGGER],
+                _trigger,
+                24,
+                24,
+                _angle
+            ];
+
+            if (_isRectangle) then
             {
-                _ctrlMap drawEllipse [_trigger, _a, _b, _angle, [0, 0, 0, 1], "#(rgb,8,8,3)color(0.3,0.3,0.3,0.3)"];
+                _ctrlMap drawRectangle [_trigger, _a, _b, _angle, [COLOR_TRIGGER], ""];
             }
             else
             {
-                _ctrlMap drawRectangle [_trigger, _a, _b, _angle, [0, 0, 0, 1], "#(rgb,8,8,3)color(0.3,0.3,0.3,0.3)"];
+                _ctrlMap drawEllipse [_trigger, _a, _b, _angle, [COLOR_TRIGGER], ""];
             };
 
-            if (ENH_DebugOptions_DrawTriggers_CursorPosition inArea _trigger) then
+            // Display trigger information when hovering
+            private _mousePos = _ctrlMap getVariable ["ENH_MouseWorldPos", [0, 0]];
+
+            if (_mousePos isNotEqualTo [0, 0] && {_mousePos inArea _trigger}) then
             {
-                if (vehicleVarName _trigger != "") then
-                {
-                    hintSilent parseText format
-                    [
-                        HINT_TEXT,
-                        vehicleVarName _trigger,
-                        triggerText _trigger,
-                        triggerType _trigger,
-                        triggerActivated _trigger,
-                        triggerInterval _trigger,
-                        triggerStatements _trigger select 0,
-                        triggerStatements _trigger select 1,
-                        triggerStatements _trigger select 2,
-                        triggerActivation _trigger select 0,
-                        triggerActivation _trigger select 1,
-                        triggerActivation _trigger select 2,
-                        getPosWorld _trigger,
-                        triggerArea _trigger select 0,
-                        triggerArea _trigger select 1,
-                        triggerArea _trigger select 2,
-                        triggerArea _trigger select 3,
-                        triggerArea _trigger select 4,
-                        [triggerTimeout _trigger select 0, triggerTimeout _trigger select 1, triggerTimeout _trigger select 2],
-                        triggerTimeout _trigger select 3,
-                        triggerTimeoutCurrent _trigger,
-                        triggerAttachedVehicle _trigger,
-                        list _trigger
-                    ];
-                }
-                else
-                {
-                    hintSilent "No variable name was given to this trigger. Detailed information are not available.";
-                };
+                hintSilent parseText format
+                [
+                    HINT_TEXT,
+                    vehicleVarName _trigger,
+                    triggerText _trigger,
+                    triggerType _trigger,
+                    triggerActivated _trigger,
+                    triggerInterval _trigger,
+                    triggerStatements _trigger select 0,
+                    triggerStatements _trigger select 1,
+                    triggerStatements _trigger select 2,
+                    triggerActivation _trigger select 0,
+                    triggerActivation _trigger select 1,
+                    triggerActivation _trigger select 2,
+                    getPosWorld _trigger,
+                    triggerArea _trigger select 0,
+                    triggerArea _trigger select 1,
+                    triggerArea _trigger select 2,
+                    triggerArea _trigger select 3,
+                    triggerArea _trigger select 4,
+                    [triggerTimeout _trigger select 0, triggerTimeout _trigger select 1, triggerTimeout _trigger select 2],
+                    triggerTimeout _trigger select 3,
+                    triggerTimeoutCurrent _trigger,
+                    triggerAttachedVehicle _trigger,
+                    list _trigger
+                ];
             };
-        }];
-    } forEach (8 allObjects 7); // All triggers
+        } forEach (8 allObjects 7); // All triggers
+    }];
 
-    findDisplay IDD_MAIN_MAP displayCtrl IDC_MAP ctrlAddEventHandler ["MouseMoving",
+    // Store mouse pos
+    _ctrlMap ctrlAddEventHandler ["MouseMoving",
     {
-        params ["_ctrlMap", "_xPos", "_yPos"];
+        params ["_ctrlMap","_xPos", "_yPos"];
 
-        ENH_DebugOptions_DrawTriggers_CursorPosition = _ctrlMap posScreenToWorld [_xPos, _yPos];
+        _ctrlMap setVariable ["ENH_MouseWorldPos", _ctrlMap posScreenToWorld [_xPos, _yPos]];
     }];
 };
 
-if (GETVALUE("DynSimDebug") && dynamicSimulationSystemEnabled) then
+if (GETVALUE("DynSimDebug") && {dynamicSimulationSystemEnabled}) then
 {
     #define UNITS_ENABLED ({simulationEnabled _x && dynamicSimulationEnabled group _x} count allUnits)
     #define ALL_UNITS ({dynamicSimulationEnabled group _x} count allUnits)
