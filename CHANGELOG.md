@@ -4,6 +4,7 @@
 
 ## FIXED
 - Module Information UI would not show all descriptions of all modules
+- Fixed fleeing value in the group debug option would not show a value
 
 # 8.7.1
 ## ADDED

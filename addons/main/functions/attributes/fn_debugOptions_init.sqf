@@ -18,6 +18,45 @@
 #define RADIUS 150
 #define DELAY 0.1
 #define HINT_REFRESH_INTERVAL 30
+#define HINT_TEXT\
+"<t size='1.3' align='center'>Trigger Information</t><br/>\
+<t align='left'>Name:<t/><t align='right'>%1</t><br/>\
+<t align='left'>Text:<t/><t align='right'>%2</t><br/>\
+<t align='left'>Type:<t/><t align='right'>%3</t><br/>\
+<t align='left'>Activated:<t/><t align='right'>%4</t><br/>\
+<t align='left'>Interval:<t/><t align='right'>%5</t><br/>\
+\
+<t size='1.3' align='center'>Statements</t><br/>\
+\
+<t align='left'>Condition:<t/><t align='right'>%6</t><br/>\
+<t align='left'>On Activation:<t/><t align='right'>%7</t><br/>\
+<t align='left'>On Deactivation:<t/><t align='right'>%8</t><br/>\
+\
+<t size='1.3' align='center'>Activation</t><br/>\
+\
+<t align='left'>By:<t/><t align='right'>%9</t><br/>\
+<t align='left'>Type:<t/><t align='right'>%10</t><br/>\
+<t align='left'>Repeatable:<t/><t align='right'>%11</t><br/>\
+\
+<t size='1.3' align='center'>Transformation</t><br/>\
+\
+<t align='left'>Position:<t/><t align='right'>%12</t><br/>\
+<t align='left'>A:<t/><t align='right'>%13</t><br/>\
+<t align='left'>B:<t/><t align='right'>%14</t><br/>\
+<t align='left'>Angle:<t/><t align='right'>%15</t><br/>\
+<t align='left'>Is Rectangle:<t/><t align='right'>%16</t><br/>\
+<t align='left'>C (Height):<t/><t align='right'>%17</t><br/>\
+\
+<t size='1.3' align='center'>Timer</t><br/>\
+\
+<t align='left'>Timer Values:<t/><t align='right'>%18</t><br/>\
+<t align='left'>Is Countdown:<t/><t align='right'>%19</t><br/>\
+<t align='left'>Current Timeout:<t/><t align='right'>%20</t><br/>\
+\
+<t size='1.3' align='center'>Special</t><br/>\
+\
+<t align='left'>Attached Vehicle/Object:<t/><t align='right'>%21</t><br/>\
+<t align='left'>List:<t/><t align='right'>%22</t><br/>"
 
 // To prevent issues in multiplayer games started from multiplayer editor
 if (!is3DENPreview) exitWith {};
@@ -331,7 +370,7 @@ if GETVALUE("ShowGroups") then
             count units _group,
             isGroupDeletedWhenEmpty _group,
             units _group apply {str round ((1 - damage _x)* 100) + " %"},
-            fleeing leader _x,
+            fleeing leader _group,
             attackEnabled _group,
             combatBehaviour _group,
             combatMode _group,
@@ -671,48 +710,9 @@ if GETVALUE("DrawTriggers") then
             {
                 if (vehicleVarName _trigger != "") then
                 {
-                    ENH_DebugOptions_DrawTriggers_HintText = "<t size='1.3' align='center'>Trigger Information</t><br/>
-<t align='left'>Name:<t/><t align='right'>%1</t><br/>
-<t align='left'>Text:<t/><t align='right'>%2</t><br/>
-<t align='left'>Type:<t/><t align='right'>%3</t><br/>
-<t align='left'>Activated:<t/><t align='right'>%4</t><br/>
-<t align='left'>Interval:<t/><t align='right'>%5</t><br/>
-
-<t size='1.3' align='center'>Statements</t><br/>
-
-<t align='left'>Condition:<t/><t align='right'>%6</t><br/>
-<t align='left'>On Activation:<t/><t align='right'>%7</t><br/>
-<t align='left'>On Deactivation:<t/><t align='right'>%8</t><br/>
-
-<t size='1.3' align='center'>Activation</t><br/>
-
-<t align='left'>By:<t/><t align='right'>%9</t><br/>
-<t align='left'>Type:<t/><t align='right'>%10</t><br/>
-<t align='left'>Repeatable:<t/><t align='right'>%11</t><br/>
-
-<t size='1.3' align='center'>Transformation</t><br/>
-
-<t align='left'>Position:<t/><t align='right'>%12</t><br/>
-<t align='left'>A:<t/><t align='right'>%13</t><br/>
-<t align='left'>B:<t/><t align='right'>%14</t><br/>
-<t align='left'>Angle:<t/><t align='right'>%15</t><br/>
-<t align='left'>Is Rectangle:<t/><t align='right'>%16</t><br/>
-<t align='left'>C (Height):<t/><t align='right'>%17</t><br/>
-
-<t size='1.3' align='center'>Timer</t><br/>
-
-<t align='left'>Timer Values:<t/><t align='right'>%18</t><br/>
-<t align='left'>Is Countdown:<t/><t align='right'>%19</t><br/>
-<t align='left'>Current Timeout:<t/><t align='right'>%20</t><br/>
-
-<t size='1.3' align='center'>Special</t><br/>
-
-<t align='left'>Attached Vehicle/Object:<t/><t align='right'>%21</t><br/>
-<t align='left'>List:<t/><t align='right'>%22</t><br/>";
-
                     hintSilent parseText format
                     [
-                        ENH_DebugOptions_DrawTriggers_HintText,
+                        HINT_TEXT,
                         vehicleVarName _trigger,
                         triggerText _trigger,
                         triggerType _trigger,
