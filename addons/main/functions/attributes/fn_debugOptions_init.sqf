@@ -423,7 +423,6 @@ if GETVALUE("ShowGroups") then
             if (count _path < 4) then {continue};
             private _markerPoly = createMarkerLocal [format ["ENH_debugWaypoints_poly_%1", str leader _group], leader _group];
             _markerPoly setMarkerShapeLocal "polyline";
-            _markerPoly setMarkerColorLocal _color;
             _markerPoly setMarkerPolylineLocal _path;
             ENH_debugWaypoints_CurrentGroup = _group;
         };
