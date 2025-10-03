@@ -56,8 +56,6 @@ switch _mode do
             ["delete", []] call ENH_fnc_favoritesList;
         }];
 
-        [CTRL(IDC_DISPLAY3DEN_FAVORITES_SEARCH), CTRL(IDC_DISPLAY3DEN_FAVORITES_BUTTON_SEARCH)] call ENH_fnc_initSearchControls;
-
         _display3DEN displayCtrl IDC_DISPLAY3DEN_FAVORITES_BUTTON_EXPAND ctrlAddEventHandler ["ButtonClick",
         {
             ["expand"] call ENH_fnc_favoritesList;
@@ -148,7 +146,6 @@ switch _mode do
         _ctrlStaticPreview ctrlSetPositionY _yPos;
         _ctrlStaticPreview ctrlSetPositionW _imageWidthCalculated;
         _ctrlStaticPreview ctrlSetPositionH (_imageHeight * GRID_H);
-        _ctrlStaticPreview ctrlSetText _image;
 
         _ctrlStaticPreview ctrlCommit 0;
 
