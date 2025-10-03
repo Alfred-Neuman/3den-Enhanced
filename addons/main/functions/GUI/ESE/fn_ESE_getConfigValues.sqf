@@ -26,32 +26,37 @@ private _itemsHashMap = createHashMap;
 _input apply
 {
     private _class = configName _x;
+
     (_class call BIS_fnc_itemType) params ["_category", "_specificType"];
+
     if ((_category in TYPES_WHITELIST || _specificType in TYPES_WHITELIST && _specificType != "UnknownEquipment") && {if (isArray (_x >> "muzzles")) then {_class call BIS_fnc_baseWeapon == _class} else {true}}) then
     {
         // Modify some _specificTypes
-        if (_specificType == "MissileLauncher") then {_specificType = "RocketLauncher"};// Same type for all launchers
-        if (_specificType in ["Throw", "SmokeShell", "Flare"]) then {_specificType = "Grenade"};// Same type for all grenades, flares, chemlights, smoke
+
+        // Same type for all launchers
+        if (_specificType == "MissileLauncher") then {_specificType = "RocketLauncher"};
+
+        // Same type for all grenades, flares, chemlights, smoke
+        if (_specificType in ["Throw", "SmokeShell", "Flare"]) then {_specificType = "Grenade"};
+
         if (_specificType == "AccessoryBipod" && {_class isKindOf ["CBA_MiscItem", configFile >> "CfgWeapons"]}) then {_specificType = "Item"};
 
         // Get the DLC, make sure it's a DLC and was not modified by a mod (CBA, ACE)
         (_x call ENH_fnc_getConfigSourceAddon) params [["_addonClass", ""], ["_addonName", ""], ["_addonIcon", ""]];
         _addons pushBackUnique [_addonClass, _addonName, _addonIcon];
 
-        _itemsHashMap insert
+        _itemsHashMap set
         [
+            toLower _class,
             [
-                toLower _class, // Make the key lowercase. Some configs don't use the proper casing (Thanks BI ;P)
-                [
-                    getText (_x >> "DisplayName"),
-                    getText (_x >> "Picture"),
-                    _addonClass,
-                    _addonIcon,
-                    _category,
-                    _specificType,
-                    getText (_x >> "descriptionShort") regexReplace ["<br[\W ]*\/>", "\n"],
-                    _class // Properly cased configName for displaying
-                ]
+                getText (_x >> "DisplayName"),
+                getText (_x >> "Picture"),
+                _addonClass,
+                _addonIcon,
+                _category,
+                _specificType,
+                getText (_x >> "descriptionShort") regexReplace ["<br[\W ]*\/>", "\n"],
+                _class // Properly cased configName for displaying
             ]
         ]
     }
