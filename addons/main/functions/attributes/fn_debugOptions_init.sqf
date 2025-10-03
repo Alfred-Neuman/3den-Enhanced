@@ -19,8 +19,24 @@
 #define DELAY 0.1
 #define HINT_REFRESH_INTERVAL 30
 #define COLOR_TRIGGER 0.1, 0.1, 0.9, 1
-#define HINT_TEXT\
-"<t size='1.3' align='center'>Trigger Information</t><br/>\
+
+#define UNITS_ENABLED ({simulationEnabled _x && dynamicSimulationEnabled group _x} count allUnits)
+#define ALL_UNITS ({dynamicSimulationEnabled group _x} count allUnits)
+#define GROUPS_ENABLED ({simulationEnabled leader _x && dynamicSimulationEnabled _x} count allGroups)
+#define VEHICLES_ENABLED ({simulationEnabled _x && dynamicSimulationEnabled _x} count vehicles)
+#define ALL_VEHICLES ({dynamicSimulationEnabled _x} count vehicles)
+#define ALL_GROUPS ({dynamicSimulationEnabled _x} count allGroups)
+#define CAN_TRIGGER_UNITS ({canTriggerDynamicSimulation _x} count allUnits)
+
+#define DISTANCE_GROUPS_UNITS (dynamicSimulationDistance "Group")
+#define DISTANCE_VEHICLES (dynamicSimulationDistance "Vehicle")
+#define DISTANCE_EMPTY_VEHICLES (dynamicSimulationDistance "EmptyVehicle")
+#define DISTANCE_PROPS (dynamicSimulationDistance "Prop")
+#define DISTANCE_COEF (dynamicSimulationDistanceCoef "IsMoving")
+#define OBJ_VIEW_DISTANCE (round (getObjectViewDistance select 0))
+
+#define HINT_TEXT_TRIGGER\
+"<t size='1.1' align='center'>Trigger Information</t><br/>\
 <t align='left'>Name:<t/><t align='right'>%1</t><br/>\
 <t align='left'>Text:<t/><t align='right'>%2</t><br/>\
 <t align='left'>Type:<t/><t align='right'>%3</t><br/>\
@@ -33,13 +49,13 @@
 <t align='left'>On Activation:<t/><t align='right'>%7</t><br/>\
 <t align='left'>On Deactivation:<t/><t align='right'>%8</t><br/>\
 \
-<t size='1.3' align='center'>Activation</t><br/>\
+<t size='1.1' align='center'>Activation</t><br/>\
 \
 <t align='left'>By:<t/><t align='right'>%9</t><br/>\
 <t align='left'>Type:<t/><t align='right'>%10</t><br/>\
 <t align='left'>Repeatable:<t/><t align='right'>%11</t><br/>\
 \
-<t size='1.3' align='center'>Transformation</t><br/>\
+<t size='1.1' align='center'>Transformation</t><br/>\
 \
 <t align='left'>Position:<t/><t align='right'>%12</t><br/>\
 <t align='left'>A:<t/><t align='right'>%13</t><br/>\
@@ -48,22 +64,76 @@
 <t align='left'>Is Rectangle:<t/><t align='right'>%16</t><br/>\
 <t align='left'>C (Height):<t/><t align='right'>%17</t><br/>\
 \
-<t size='1.3' align='center'>Timer</t><br/>\
+<t size='1.1' align='center'>Timer</t><br/>\
 \
 <t align='left'>Timer Values:<t/><t align='right'>%18</t><br/>\
 <t align='left'>Is Countdown:<t/><t align='right'>%19</t><br/>\
 <t align='left'>Current Timeout:<t/><t align='right'>%20</t><br/>\
 \
-<t size='1.3' align='center'>Special</t><br/>\
+<t size='1.1' align='center'>Special</t><br/>\
 \
 <t align='left'>Attached Vehicle/Object:<t/><t align='right'>%21</t><br/>\
 <t align='left'>List:<t/><t align='right'>%22</t><br/>"
 
-// To prevent issues in multiplayer games started from multiplayer editor
+#define HINT_TEXT_GROUP\
+"<t size='1.1' align='center'>Group Information</t><br/>\
+<t align='left'>Callsign:<t/><t align='right'>%1</t><br/>\
+<t align='left'>Leader:<t/><t align='right'>%2</t><br/>\
+<t align='left'>No. of Units:<t/><t align='right'>%3</t><br/>\
+<t align='left'>Delete when Empty:<t/><t align='right'>%4</t><br/>\
+\
+<t size='1.1' align='center'>Group Status</t><br/>\
+\
+<t align='left'>Health:<t/><t align='right'>%5</t><br/>\
+<t align='left'>Fleeing:<t/><t align='right'>%6</t><br/>\
+<t align='left'>Attack Enabled:<t/><t align='right'>%7</t><br/>\
+<t align='left'>Combat Behaviour:<t/><t align='right'>%8</t><br/>\
+<t align='left'>Combat Mode:<t/><t align='right'>%9</t><br/>\
+<t align='left'>Formation:<t/><t align='right'>%10</t><br/>\
+<t align='left'>Speed:<t/><t align='right'>%11</t><br/>\
+\
+<t size='1.1' align='center'>Waypoints</t><br/>\
+\
+<t align='left'>No. of Waypoints:<t/><t align='right'>%12</t><br/>\
+<t align='left'>Current Waypoint:<t/><t align='right'>%13</t><br/>\
+<t align='left'>Unit Speed:<t/><t align='right'>%14</t><br/>\
+\
+<t size='1.1' align='center'>Additional Options</t><br/>\
+\
+<t align='left'>Show Waypoints:<t/><t align='right'>LEFT CLICK</t><br/>\
+<t align='left'>Delete Group:<t/><t align='right'>CTRL + LEFT CLICK</t><br/>"
+
+#define HINT_TEXT_FPS\
+"<t size='1.1' align='center'>FPS</t><br/>\
+<t align='left'>AVG:<t/><t align='right'>%1</t><br/>\
+<t align='left'>MIN:<t/><t align='right'>%2</t><br/>"
+
+#define HINT_TEXT_SIMULATION\
+"<t size='1.1' align='center'>Dynamic Simulation Information</t><br/>\
+<t align='left' color='#ffffff'>Enabled Units (DS):<t/><t align='right'>%1/%2</t><br/>\
+<t align='left' color='#ffffff'>Enabled Groups (DS):<t/><t align='right'>%3/%4</t><br/>\
+<t align='left' color='#ffffff'>Enabled Vehicles (DS)<t/><t align='right'>%5/%6</t><br/>\
+<t align='left' color='#ffffff'>Units that can Trigger DS:<t/><t align='right'>%7</t><br/>\
+<t align='left' color='#ffff00'>Trigger Distance Units/groups:<t/><t align='right'>%8 m</t><br/>\
+<t align='left' color='#00FF00'>Trigger Distance Vehicles:<t/><t align='right'>%9 m</t><br/>\
+<t align='left' color='#00ffff'>Trigger Distance Empty vehicles:<t/><t align='right'>%10 m</t><br/>\
+<t align='left' color='#ff00ff'>Trigger Distance Props:<t/><t align='right'>%11 m</t><br/>\
+<t align='left' color='#ffffff'>Distance Coef.:<t/><t align='right'>%12x</t><br/>\
+<t align='left' color='#ff0000'>Object View Distance:<t/><t align='right'>%13 m</t><br/>\
+<t align='left' color='#ffffff'>Recommended Object View Distance:<t/><t align='right'>%14 m</t><br/>"
+
 if (!is3DENPreview) exitWith {};
 
 // Small delay to give scenario time to fully initialize
 waitUntil {sleep 1; !isNull player};
+
+// Handle hint drawing with debug information
+ENH_DebugOptions_HintContent = createHashMap;
+
+addMissionEventHandler ["EachFrame",
+{
+    hintSilent parseText (values ENH_DebugOptions_HintContent joinString "<br/><br/>");
+}];
 
 if GETVALUE("Arsenal") then
 {
@@ -161,37 +231,17 @@ if GETVALUE("Stamina") then
 
 if GETVALUE("FPS") then
 {
-    0 spawn
+    addMissionEventHandler ["EachFrame",
     {
-        waitUntil {!isNull MISSIONDISPLAY};
-        disableSerialization;
+        private _debugText = format
+        [
+            HINT_TEXT_FPS,
+            round diag_fps,
+            round diag_fpsMin
+        ];
 
-        // Make sure that controls are not created twice when restart button is pressed
-        if (isNull (MISSIONDISPLAY displayCtrl IDC_DEBUGOPTIONS_FPS)) then
-        {
-            private _ctrlFPS = MISSIONDISPLAY ctrlCreate ["RscStructuredText", IDC_DEBUGOPTIONS_FPS];
-            _ctrlFPS ctrlSetPosition
-            [
-                0.94625 * safeZoneW + safeZoneX,
-                0.962 * safeZoneH + safeZoneY,
-                0.0525 * safeZoneW,
-                0.056 * safeZoneH
-            ];
-            _ctrlFPS ctrlCommit 0;
-        };
-        private _ctrlFPS = MISSIONDISPLAY displayCtrl IDC_DEBUGOPTIONS_FPS;
-
-        while {true} do
-        {
-            _ctrlFPS ctrlSetStructuredText parseText format
-            [
-                "<t size='0.6'>FPS(avg.): %1<br/>FPS(min.): %2</t>",
-                round diag_fps,
-                round diag_fpsMin
-            ];
-            sleep DELAY;
-        };
-    };
+        ENH_DebugOptions_HintContent set ["FPS", _debugText];
+    }];
 };
 
 if GETVALUE("KillBLUFOR") then
@@ -363,9 +413,9 @@ if GETVALUE("ShowGroups") then
             "_posX", "_posY",
             "_shift", "_control", "_alt"
         ];
-        hintSilent parseText format
+        private _text = format
         [
-            "<t align='left' font='EtelkaMonospacePro'><br/><t size='1.2'>General Information:</t><br/>Callsign: %1<br/>Leader: %2<br/>No. of Units: %3<br/>Delete when Empty: %4<br/><br/><t size='1.2'>Group Status:</t><br/>Health: %5<br/>Fleeing: %6<br/>Attack Enabled: %7<br/>Combat Behaviour: %8<br/>Combat Mode: %9<br/>Formation: %10<br/>Speed: %11<br/><br/><t size='1.2'>Waypoints:</t><br/>No. of Waypoints: %12<br/>Current Waypoint: %13<br/>Speed: %14<br/><br/><t size='1.2'>Additional Options:</t><br/>- Left click on an icon to toggle group waypoints<br/>- CTRL + Left Click to delete a group</t>",
+            HINT_TEXT_GROUP,
             format ["%1 (%2)", groupID _group, if (objectParent leader _group isNotEqualTo leader _group) then {[configOf (objectParent leader _group)] call BIS_fnc_displayName} else {"-"}],
             name leader _group,
             count units _group,
@@ -381,12 +431,14 @@ if GETVALUE("ShowGroups") then
             waypointType [_group, currentWaypoint _group],
             units _group apply {str round speed _x + " km/h"}
         ];
+
+        ENH_DebugOptions_HintContent set ["ShowGroups", _text];
     }];
 
     // Remove the hint whenever the mouse is leaving the icon area (2D/3D)
     addMissionEventHandler ["GroupIconOverLeave",
     {
-        hintSilent "";
+        ENH_DebugOptions_HintContent deleteAt "ShowGroups";
     }];
 
     // Toggle group's waypoints whenever clicking on an icon
@@ -687,189 +739,157 @@ if (GETVALUE("DebugPath") > 0) then
     } forEach allGroups;
 };
 
-if GETVALUE("DrawTriggers") then
+if (GETVALUE("DrawTriggers") || {GETVALUE("DynSimDebug") && {dynamicSimulationSystemEnabled}}) then
 {
-    private _ctrlMap = findDisplay IDD_MAIN_MAP displayCtrl IDC_MAP;
-
-    _ctrlMap ctrlAddEventHandler ["Draw",
-    {
-        params ["_ctrlMap"];
-
-        // Draw triggers
-        {
-            private _trigger = _x;
-            triggerArea _trigger params ["_a", "_b", "_angle", "_isRectangle"];
-
-            _ctrlMap drawIcon
-            [
-                "a3\3den\data\displays\display3den\panelright\modetriggers_ca.paa",
-                [COLOR_TRIGGER],
-                _trigger,
-                24,
-                24,
-                _angle
-            ];
-
-            if (_isRectangle) then
-            {
-                _ctrlMap drawRectangle [_trigger, _a, _b, _angle, [COLOR_TRIGGER], ""];
-            }
-            else
-            {
-                _ctrlMap drawEllipse [_trigger, _a, _b, _angle, [COLOR_TRIGGER], ""];
-            };
-
-            // Display trigger information when hovering
-            private _mousePos = _ctrlMap getVariable ["ENH_MouseWorldPos", [0, 0]];
-
-            if (_mousePos isNotEqualTo [0, 0] && {_mousePos inArea _trigger}) then
-            {
-                hintSilent parseText format
-                [
-                    HINT_TEXT,
-                    vehicleVarName _trigger,
-                    triggerText _trigger,
-                    triggerType _trigger,
-                    triggerActivated _trigger,
-                    triggerInterval _trigger,
-                    triggerStatements _trigger select 0,
-                    triggerStatements _trigger select 1,
-                    triggerStatements _trigger select 2,
-                    triggerActivation _trigger select 0,
-                    triggerActivation _trigger select 1,
-                    triggerActivation _trigger select 2,
-                    getPosWorld _trigger,
-                    triggerArea _trigger select 0,
-                    triggerArea _trigger select 1,
-                    triggerArea _trigger select 2,
-                    triggerArea _trigger select 3,
-                    triggerArea _trigger select 4,
-                    [triggerTimeout _trigger select 0, triggerTimeout _trigger select 1, triggerTimeout _trigger select 2],
-                    triggerTimeout _trigger select 3,
-                    triggerTimeoutCurrent _trigger,
-                    triggerAttachedVehicle _trigger,
-                    list _trigger
-                ];
-            };
-        } forEach (8 allObjects 7); // All triggers
-    }];
-
-    // Store mouse pos
-    _ctrlMap ctrlAddEventHandler ["MouseMoving",
-    {
-        params ["_ctrlMap","_xPos", "_yPos"];
-
-        _ctrlMap setVariable ["ENH_MouseWorldPos", _ctrlMap posScreenToWorld [_xPos, _yPos]];
-    }];
-};
-
-if (GETVALUE("DynSimDebug") && {dynamicSimulationSystemEnabled}) then
-{
-    #define UNITS_ENABLED ({simulationEnabled _x && dynamicSimulationEnabled group _x} count allUnits)
-    #define ALL_UNITS ({dynamicSimulationEnabled group _x} count allUnits)
-    #define GROUPS_ENABLED ({simulationEnabled leader _x && dynamicSimulationEnabled _x} count allGroups)
-    #define VEHICLES_ENABLED ({simulationEnabled _x && dynamicSimulationEnabled _x} count vehicles)
-    #define ALL_VEHICLES ({dynamicSimulationEnabled _x} count vehicles)
-    #define ALL_GROUPS ({dynamicSimulationEnabled _x} count allGroups)
-    #define CAN_TRIGGER_UNITS ({canTriggerDynamicSimulation _x} count allUnits)
-
-    #define DISTANCE_GROUPS_UNITS (dynamicSimulationDistance "Group")
-    #define DISTANCE_VEHICLES (dynamicSimulationDistance "Vehicle")
-    #define DISTANCE_EMPTY_VEHICLES (dynamicSimulationDistance "EmptyVehicle")
-    #define DISTANCE_PROPS (dynamicSimulationDistance "Prop")
-    #define DISTANCE_COEF (dynamicSimulationDistanceCoef "IsMoving")
-    #define OBJ_VIEW_DISTANCE (round (getObjectViewDistance select 0))
-
-    ENH_dynSimDebug_infoTexts =
-    [
-        [{format ["ENABLED UNITS (DYNAMIC SIMULATION ONLY): %1 / %2", UNITS_ENABLED, ALL_UNITS]}],
-        [{format ["ENABLED GROUPS (DYNAMIC SIMULATION ONLY): %1 / %2", GROUPS_ENABLED, ALL_GROUPS]}],
-        [{format ["ENABLED VEHICLES (DYNAMIC SIMULATION ONLY): %1 / %2", VEHICLES_ENABLED, ALL_VEHICLES]}],
-        [{format ["UNITS THAT CAN TRIGGER SIMULATION: %1", CAN_TRIGGER_UNITS]}],
-        [{format ["TRIGGER DISTANCE UNITS AND GROUPS: %1 m", DISTANCE_GROUPS_UNITS]}, [1, 1, 0, 1]],
-        [{format ["TRIGGER DISTANCE VEHICLES: %1 m", DISTANCE_VEHICLES]}, [0, 1, 0, 1]],
-        [{format ["TRIGGER DISTANCE EMPTY VEHICLES: %1 m", DISTANCE_EMPTY_VEHICLES]}, [0, 1, 1, 1]],
-        [{format ["TRIGGER DISTANCE PROPS: %1 m", DISTANCE_PROPS]}, [1, 0, 1, 1]],
-        [{format ["DISTANCE COEFICIENT: x%1", DISTANCE_COEF]}],
-        [{format ["OBJECT VIEW DISTANCE: %1 m", OBJ_VIEW_DISTANCE]}, [1, 0, 0, 1]],
-        [{format ["RECOMMENDED OBJECT VIEW DISTANCE: %1 m", selectMax [DISTANCE_GROUPS_UNITS * DISTANCE_COEF, DISTANCE_VEHICLES * DISTANCE_COEF, DISTANCE_EMPTY_VEHICLES, DISTANCE_PROPS] * 0.8]}],
-        [{"VISIT ""https:// community.bistudio.com/wiki/Arma_3:_Dynamic_Simulation"" FOR MORE INFORMATION."}]
-    ];
-
     findDisplay IDD_MAIN_MAP displayCtrl IDC_MAP ctrlAddEventHandler ["Draw",
     {
         params ["_ctrlMap"];
 
+        if (GETVALUE("DynSimDebug") && {dynamicSimulationSystemEnabled}) then
         {
-            if (_x isKindOf "CAManBase" && {canTriggerDynamicSimulation _x}) then
             {
-                _ctrlMap drawEllipse [_x, DISTANCE_GROUPS_UNITS, DISTANCE_GROUPS_UNITS, 0, [1, 1, 0, 1], ""];// Groups and Units
-                _ctrlMap drawEllipse [_x, DISTANCE_VEHICLES, DISTANCE_VEHICLES, 0, [0, 1, 0, 1], ""];// Vehicles
-                _ctrlMap drawEllipse [_x, DISTANCE_EMPTY_VEHICLES, DISTANCE_EMPTY_VEHICLES, 0, [0, 1, 1, 1], ""];// Empty Vehicles
-                _ctrlMap drawEllipse [_x, DISTANCE_PROPS, DISTANCE_PROPS, 0, [1, 0, 1, 1], ""];// Props
-                _ctrlMap drawEllipse [_x, OBJ_VIEW_DISTANCE, OBJ_VIEW_DISTANCE, 0, [1, 0, 0, 1], ""];// Props
-            };
-
-            if (dynamicSimulationEnabled _x || {dynamicSimulationEnabled group _x}) then
-            {
-                // Crew members inherit simulation from vehicle
-                if !(isNull objectParent _x) then {continue};
-
-                if !(_x getVariable ["ENH_DynSim_Registered", false]) then
+                if (_x isKindOf "CAManBase" && {canTriggerDynamicSimulation _x}) then
                 {
-                    private _icon = getText (configOf _x >> "icon");
-
-                    if !(fileExists _icon) then
-                    {
-                        _icon = getText (configFile >> "CfgVehicleIcons" >> _icon);
-                    };
-
-                    if !(fileExists _icon) then
-                    {
-                        _icon = "a3\ui_f\data\map\vehicleicons\iconvehicle_ca.paa";
-                    };
-
-                    _x setVariable ["ENH_DynSim_Registered", true];
-                    _x setVariable ["ENH_DynSim_ConfigName", configName configOf _x];
-                    _x setVariable ["ENH_DynSim_Icon", _icon];
-                    _x setVariable ["ENH_DynSim_Color", [side _x] call BIS_fnc_sideColor];
+                    _ctrlMap drawEllipse [_x, DISTANCE_GROUPS_UNITS, DISTANCE_GROUPS_UNITS, 0, [1, 1, 0, 1], ""];// Groups and Units
+                    _ctrlMap drawEllipse [_x, DISTANCE_VEHICLES, DISTANCE_VEHICLES, 0, [0, 1, 0, 1], ""];// Vehicles
+                    _ctrlMap drawEllipse [_x, DISTANCE_EMPTY_VEHICLES, DISTANCE_EMPTY_VEHICLES, 0, [0, 1, 1, 1], ""];// Empty Vehicles
+                    _ctrlMap drawEllipse [_x, DISTANCE_PROPS, DISTANCE_PROPS, 0, [1, 0, 1, 1], ""];// Props
+                    _ctrlMap drawEllipse [_x, OBJ_VIEW_DISTANCE, OBJ_VIEW_DISTANCE, 0, [1, 0, 0, 1], ""];// Props
                 };
 
-                private _color = _x getVariable "ENH_DynSim_Color";
-                _color set [3, [0.5, 1] select (simulationEnabled _x)];
+                if (dynamicSimulationEnabled _x || {dynamicSimulationEnabled group _x}) then
+                {
+                    // Crew members inherit simulation from vehicle
+                    if !(isNull objectParent _x) then {continue};
+
+                    if !(_x getVariable ["ENH_DynSim_Registered", false]) then
+                    {
+                        private _icon = getText (configOf _x >> "icon");
+
+                        if !(fileExists _icon) then
+                        {
+                            _icon = getText (configFile >> "CfgVehicleIcons" >> _icon);
+                        };
+
+                        if !(fileExists _icon) then
+                        {
+                            _icon = "a3\ui_f\data\map\vehicleicons\iconvehicle_ca.paa";
+                        };
+
+                        _x setVariable ["ENH_DynSim_Registered", true];
+                        _x setVariable ["ENH_DynSim_ConfigName", configName configOf _x];
+                        _x setVariable ["ENH_DynSim_Icon", _icon];
+                        _x setVariable ["ENH_DynSim_Color", [side _x] call BIS_fnc_sideColor];
+                    };
+
+                    private _color = _x getVariable "ENH_DynSim_Color";
+                    _color set [3, [0.5, 1] select (simulationEnabled _x)];
+
+                    _ctrlMap drawIcon
+                    [
+                        _x getVariable "ENH_DynSim_Icon",
+                        _x getVariable "ENH_DynSim_Color",
+                        getPosWorldVisual _x,
+                        25,
+                        25,
+                        getDir _x,
+                        _x getVariable "ENH_DynSim_ConfigName",
+                        2
+                    ];
+                };
+            } forEach vehicles + allUnits;
+
+            private _debugText = format
+            [
+                HINT_TEXT_SIMULATION,
+                UNITS_ENABLED,
+                ALL_UNITS,
+                GROUPS_ENABLED,
+                ALL_GROUPS,
+                VEHICLES_ENABLED,
+                ALL_VEHICLES,
+                CAN_TRIGGER_UNITS,
+                DISTANCE_GROUPS_UNITS,
+                DISTANCE_VEHICLES,
+                DISTANCE_EMPTY_VEHICLES,
+                DISTANCE_PROPS,
+                DISTANCE_COEF,
+                OBJ_VIEW_DISTANCE,
+                selectMax [DISTANCE_GROUPS_UNITS * DISTANCE_COEF, DISTANCE_VEHICLES * DISTANCE_COEF, DISTANCE_EMPTY_VEHICLES, DISTANCE_PROPS] * 0.8
+            ];
+
+            ENH_DebugOptions_HintContent set ["DynSimDebug", _debugText];
+        };
+
+        if GETVALUE("DrawTriggers") then
+        {
+            private _debugText = "";
+
+            // Draw triggers
+            {
+                private _trigger = _x;
+                triggerArea _trigger params ["_a", "_b", "_angle", "_isRectangle"];
 
                 _ctrlMap drawIcon
                 [
-                    _x getVariable "ENH_DynSim_Icon",
-                    _x getVariable "ENH_DynSim_Color",
-                    getPosWorldVisual _x,
-                    25,
-                    25,
-                    getDir _x,
-                    _x getVariable "ENH_DynSim_ConfigName",
-                    2
+                    "a3\3den\data\displays\display3den\panelright\modetriggers_ca.paa",
+                    [COLOR_TRIGGER],
+                    _trigger,
+                    24,
+                    24,
+                    _angle
                 ];
+
+                if (_isRectangle) then
+                {
+                    _ctrlMap drawRectangle [_trigger, _a, _b, _angle, [COLOR_TRIGGER], ""];
+                }
+                else
+                {
+                    _ctrlMap drawEllipse [_trigger, _a, _b, _angle, [COLOR_TRIGGER], ""];
+                };
+
+                // Display trigger information when hovering
+                private _mousePos = _ctrlMap getVariable ["ENH_MouseWorldPos", [0, 0]];
+
+                if (_mousePos isNotEqualTo [0, 0] && {_mousePos inArea _trigger}) then
+                {
+                    _debugText = format
+                    [
+                        HINT_TEXT_TRIGGER,
+                        vehicleVarName _trigger,
+                        triggerText _trigger,
+                        triggerType _trigger,
+                        triggerActivated _trigger,
+                        triggerInterval _trigger,
+                        triggerStatements _trigger select 0,
+                        triggerStatements _trigger select 1,
+                        triggerStatements _trigger select 2,
+                        triggerActivation _trigger select 0,
+                        triggerActivation _trigger select 1,
+                        triggerActivation _trigger select 2,
+                        getPosWorld _trigger,
+                        triggerArea _trigger select 0,
+                        triggerArea _trigger select 1,
+                        triggerArea _trigger select 2,
+                        triggerArea _trigger select 3,
+                        triggerArea _trigger select 4,
+                        [triggerTimeout _trigger select 0, triggerTimeout _trigger select 1, triggerTimeout _trigger select 2],
+                        triggerTimeout _trigger select 3,
+                        triggerTimeoutCurrent _trigger,
+                        triggerAttachedVehicle _trigger,
+                        list _trigger
+                    ];
+                    ENH_DebugOptions_HintContent set ["DrawTriggers", _debugText];
+                };
+            } forEach (8 allObjects 7); // All triggers
+
+            // Only delete if mouse is in none of the triggers
+            if (_debugText == "") then
+            {
+                ENH_DebugOptions_HintContent deleteAt "DrawTriggers";
             };
-        } forEach vehicles + allUnits;
-
-        // Update stats markers
-        private _startY = worldSize;
-
-        {
-            _x params [["_textCode", {}], ["_textColor", [1, 1, 1, 1]]];
-            _ctrlMap drawIcon
-            [
-                "\A3\ui_f\data\map\markers\military\box_CA.paa",
-                _textColor,
-                [worldSize + 100, _startY, 0],
-                15,
-                15,
-                0,
-                call _textCode,
-                2
-            ];
-            _startY = _startY - 100;
-        } forEach ENH_dynSimDebug_infoTexts;
+        };
     }];
 };
 

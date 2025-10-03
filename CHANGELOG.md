@@ -1,12 +1,15 @@
 # 8.7.1
 ## CHANGED
-- Complete overhaul of Module Information UI. It now shows entites that can be synced similar to the old editor
-- Improved visualization of triggers when "Show Triggers" debug option is enabled
+- Module Information
+    - Complete overhaul of Module Information UI. It now shows entites that can be synced similar to the old editor
+    - Module Information UI would not show all descriptions of all modules
 
-## FIXED
-- Module Information UI would not show all descriptions of all modules
-- Fixed fleeing value in the group debug option would not show a value
-- Debug option to show triggers would not display data
+- Debug Options
+    - Improved visualization of triggers when "Show Triggers" debug option is enabled
+    - Unified debug option  hint style
+    - Fixed fleeing value in the group debug option would not show a value
+    - Debug option to show triggers would not display data
+    - Fixed draw triggers and dynamic simulation debug view would not work together
 
 # 8.7.1
 ## ADDED
