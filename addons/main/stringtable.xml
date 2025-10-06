@@ -7506,19 +7506,6 @@
             <Chinese>模塊信息</Chinese>
             <Chinesesimp>模块信息</Chinesesimp>
         </Key>
-        <Key ID="STR_ENH_MAIN_MODULEINFORMATION_DESCRIPTION">
-            <English>Description:</English>
-            <Czech>Popis:</Czech>
-            <French>Description :</French>
-            <Spanish>Descripción:</Spanish>
-            <Italian>Descrizione:</Italian>
-            <Polish>Opis:</Polish>
-            <Portuguese>Descrição:</Portuguese>
-            <Russian>Описание:</Russian>
-            <German>Beschreibung:</German>
-            <Chinese>描述:</Chinese>
-            <Chinesesimp>描述:</Chinesesimp>
-        </Key>
         <Key ID="STR_ENH_MAIN_MODULEINFORMATION_DIRECTION">
             <English>Direction:</English>
             <Czech>Směr:</Czech>
@@ -7554,18 +7541,6 @@
             <German>Position:</German>
             <Chinese>位置：</Chinese>
             <Chinesesimp>位置：</Chinesesimp>
-        </Key>
-        <Key ID="STR_ENH_MAIN_MODULEINFORMATION_SYNC">
-            <English>Can be synced with:</English>
-            <Czech>Může být synchroznizován s:</Czech>
-            <French>Peut être synchronisé avec :</French>
-            <Spanish>Se puede sincronizar con:</Spanish>
-            <Italian>Puo essere sincronizzato con:</Italian>
-            <Polish>Może być zsynchronizowany z:</Polish>
-            <Russian>Может быть синхронизирован с:</Russian>
-            <German>Kann synchronisiert werden mit:</German>
-            <Chinese>可以同步:</Chinese>
-            <Chinesesimp>可以同步:</Chinesesimp>
         </Key>
         <Key ID="STR_ENH_MAIN_MULTIPLAYERSCRIPTING">
             <English>Multiplayer Scripting</English>
