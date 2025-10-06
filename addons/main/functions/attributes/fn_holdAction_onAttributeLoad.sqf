@@ -16,141 +16,139 @@
     -
 */
 
-private _defaultIcons =
-[
-    // Hold Action Icons
-    "\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",
-    "\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa",
-    "\a3\missions_f_oldman\data\img\holdactions\holdAction_box_ca.paa",
-    "\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_start_ca.paa",
-    "\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_stop_ca.paa",
-    "\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa",
-    "\a3\ui_f_aow\data\igui\cfg\holdactions\holdaction_charity_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_market_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_sleep_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_sleep2_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\map_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\meet_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\refuel_ca.paa",
-    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\repair_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_forceRespawn_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_loaddevice_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_passleadership_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_requestleadership_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_secure_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_takeOff1_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_takeOff2_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsdown_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsup_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa",
-    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloaddevice_ca.paa",
-    // Add Action Icons
-    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_access_fm_CA.paa",
-    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_end_sim_CA.paa",
-    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_exit_CA.paa",
-    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_start_sim_CA.paa",
-    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_view_article_CA.paa",
-    "\a3\props_f_enoch\items\tools\data\tinfoil_action_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_aaf_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_csat_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_escape_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_fia_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_fragment_back_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_fragment_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_idap_ca.paa",
-    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_nato_ca.paa",
-    "\a3\ui_f_jets\data\igui\cfg\actions\action_attachtocatapult_ca.paa",
-    "\a3\ui_f_jets\data\igui\cfg\actions\action_detachtocatapult_ca.paa",
-    "\a3\ui_f_jets\data\igui\cfg\actions\action_launchfromcatapult_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\arrow_down_gs.paa",
-    "\a3\ui_f\data\igui\cfg\actions\arrow_up_gs.paa",
-    "\a3\ui_f\data\igui\cfg\actions\autohover_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\bandage_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\beacons_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\cancelhover_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\close_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\eject_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\engine_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\engine_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\flapsextend_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\flapsretract_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\gear_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\getincargo_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\getincommander_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\getindriver_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\getingunner_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\getout_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\heal_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_batt_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_batt_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_brk_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_col_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_col_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_land_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_land_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_start_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_start_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_thtl_idl_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_thtl_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_thtl_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ico_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ladderdown_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ladderoff_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\ladderup_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\landingautopilot_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\landingautopilot_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\loadvehicle_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_arrow_up_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_cancel_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_cancel_manualfire_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_deactivate_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_enter_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_exit_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_fire_in_flame_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_fire_put_down_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_gear_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_getin_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_getincargo.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_ladderondown_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_ladderonup_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_manualfire_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_open_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_takemagazine_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_takemine_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_takeweapon_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_teamswitch_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_turnin_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_turnout_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\open_door_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\periscopedepth_off_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\periscopedepth_on_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\radaroff_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\radaron_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\reammo_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\refuel_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\reload_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\returnflag_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\settimer_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\take_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\takeflag_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\talk_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\unloadallvehicles_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\unloadincapacitated_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\unloadvehicle_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\vtolvectoring_ca.paa",
-    "\a3\ui_f\data\igui\cfg\actions\vtolvectoringcancel_ca.paa"
-];
+#define DEFAULT_ICONS\
+[\
+    "\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_loadVehicle_ca.paa",\
+    "\a3\data_f_destroyer\data\UI\IGUI\Cfg\holdactions\holdAction_unloadVehicle_ca.paa",\
+    "\a3\missions_f_oldman\data\img\holdactions\holdAction_box_ca.paa",\
+    "\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_start_ca.paa",\
+    "\a3\missions_f_oldman\data\img\holdactions\holdAction_follow_stop_ca.paa",\
+    "\a3\missions_f_oldman\data\img\holdactions\holdAction_talk_ca.paa",\
+    "\a3\ui_f_aow\data\igui\cfg\holdactions\holdaction_charity_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\attack_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_market_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_sleep_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_sleep2_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\map_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\meet_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\refuel_ca.paa",\
+    "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\repair_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_forceRespawn_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_loaddevice_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_passleadership_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_requestleadership_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_secure_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_takeOff1_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_takeOff2_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsdown_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsup_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa",\
+    "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloaddevice_ca.paa",\
+    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_access_fm_CA.paa",\
+    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_end_sim_CA.paa",\
+    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_exit_CA.paa",\
+    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_start_sim_CA.paa",\
+    "\a3\Missions_F_Orange\Data\Img\Showcase_LawsOfWar\action_view_article_CA.paa",\
+    "\a3\props_f_enoch\items\tools\data\tinfoil_action_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_aaf_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_csat_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_escape_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_fia_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_fragment_back_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_fragment_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_idap_ca.paa",\
+    "\a3\ui_f_orange\Data\CfgOrange\Missions\action_nato_ca.paa",\
+    "\a3\ui_f_jets\data\igui\cfg\actions\action_attachtocatapult_ca.paa",\
+    "\a3\ui_f_jets\data\igui\cfg\actions\action_detachtocatapult_ca.paa",\
+    "\a3\ui_f_jets\data\igui\cfg\actions\action_launchfromcatapult_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\arrow_down_gs.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\arrow_up_gs.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\autohover_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\bandage_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\beacons_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\beacons_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\cancelhover_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\close_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\eject_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\engine_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\engine_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\flapsextend_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\flapsretract_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\gear_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\getincargo_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\getincommander_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\getindriver_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\getingunner_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\getout_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\heal_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_batt_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_batt_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_brk_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_col_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_col_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_land_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_land_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_start_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_start_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_thtl_idl_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_thtl_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_cpt_thtl_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ico_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ladderdown_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ladderoff_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\ladderup_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\landingautopilot_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\landingautopilot_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\loadvehicle_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_arrow_up_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_cancel_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_cancel_manualfire_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_deactivate_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_enter_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_exit_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_fire_in_flame_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_fire_put_down_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_gear_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_getin_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_getincargo.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_ladderondown_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_ladderonup_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_manualfire_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_open_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_takemagazine_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_takemine_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_takeweapon_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_teamswitch_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_turnin_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\obsolete\ui_action_turnout_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\open_door_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\periscopedepth_off_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\periscopedepth_on_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\radaroff_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\radaron_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\reammo_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\refuel_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\reload_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\returnflag_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\settimer_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\take_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\takeflag_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\talk_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\unloadallvehicles_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\unloadincapacitated_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\unloadvehicle_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\vtolvectoring_ca.paa",\
+    "\a3\ui_f\data\igui\cfg\actions\vtolvectoringcancel_ca.paa"\
+]
 
 private _additionalIcons = profileNamespace getVariable ["ENH_EditorPreferences_HoldActionIcons", []];
 
@@ -162,9 +160,8 @@ private _additionalIcons = profileNamespace getVariable ["ENH_EditorPreferences_
     };
 } forEach _additionalIcons;
 
-_defaultIcons = _defaultIcons + _additionalIcons;
 
-uiNamespace setVariable ["ENH_HoldAction_Icons", _defaultIcons];
+uiNamespace setVariable ["ENH_HoldAction_Icons", DEFAULT_ICONS + _additionalIcons];
 
 params ["_ctrlGroup", "_value"];
 
@@ -194,7 +191,7 @@ private _clickCode =
     [
         ctrlParent _ctrl,
         _ctrl,
-        uiNamespace getVariable ["ENH_HoldAction_Icons", [_defaultIcons]],
+        uiNamespace getVariable ["ENH_HoldAction_Icons", [DEFAULT_ICONS]],
         ctrlText _ctrl
     ] call ENH_fnc_iconPicker;
 };
