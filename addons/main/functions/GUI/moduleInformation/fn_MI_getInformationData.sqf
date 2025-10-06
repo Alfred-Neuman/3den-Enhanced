@@ -40,8 +40,19 @@ if (_displayName == "" && {"trigger" in toLower _configName}) then
 
 _data set ["displayName", _displayName];
 
+// Description
+// If we have a module we need to get the full description from main config
+// Check if a class with that config name exists in cfg vehicles and if it inherits from module_f
+// This one has a proper description then
+
+private _cfgModuleDescription = _cfgModule;
+if (isClass (configFile >> "CfgVehicles" >> _configName) && {"Module_F" in ([configFile >> "CfgVehicles" >> _configName, true] call BIS_fnc_returnParents)}) then
+{
+    _cfgModuleDescription = _cfgModule >> "ModuleDescription";
+};
+
 // Optional
-private _optional = if (getNumber (_cfgModule >> "optional") > 0) then
+private _optional = if (getNumber (_cfgModuleDescription >> "optional") > 0) then
 {
     localize "$STR_A3_RSCDISPLAYARCADEMODULES_OPTIONAL";
 }
@@ -53,7 +64,7 @@ else
 _data set ["optional", _optional];
 
 // Area
-private _area = if (getNumber (_cfgModule >> "area") > 0) then
+private _area = if (getNumber (_cfgModuleDescription >> "area") > 0) then
 {
     localize "$STR_A3_CFGVEHICLES_LOCATIONAREA_F_0";
 }
@@ -65,7 +76,7 @@ else
 _data set ["area", _area];
 
 // Duplicate
-private _duplicate = if (getNumber (_cfgModule >> "duplicate") > 0) then
+private _duplicate = if (getNumber (_cfgModuleDescription >> "duplicate") > 0) then
 {
     getText (_cfgModuleBaseDescription >> "duplicateEnabled");
 }
@@ -77,7 +88,7 @@ else
 _data set ["duplicate", _duplicate];
 
 // Position
-private _position = if (getNumber (_cfgModule >> "position") > 0) then
+private _position = if (getNumber (_cfgModuleDescription >> "position") > 0) then
 {
     getText (_cfgModuleBaseDescription >> "positionEnabled");
 }
@@ -89,7 +100,7 @@ else
 _data set ["position", _position];
 
 // Direction
-private _direction = if (getNumber (_cfgModule >> "direction") > 0) then
+private _direction = if (getNumber (_cfgModuleDescription >> "direction") > 0) then
 {
     getText (_cfgModuleBaseDescription >> "directionEnabled");
 }
@@ -100,17 +111,7 @@ else
 
 _data set ["direction", _direction];
 
-// Description
-// If we have a module we need to get the full description from main config
-
-// Check if a class with that config name exists in cfg vehicles and if it inherits from module_f
-// This one has a proper description then
-if (isClass (configFile >> "CfgVehicles" >> _configName) && {"Module_F" in ([configFile >> "CfgVehicles" >> _configName, true] call BIS_fnc_returnParents)}) then
-{
-    _cfgModule = configFile >> "CfgVehicles" >> _configName >> "ModuleDescription";
-};
-
-private _descriptionRaw = [_cfgModule >> "description", nil, 0] call BIS_fnc_returnConfigEntry;
+private _descriptionRaw = [_cfgModuleDescription >> "description", nil, 0] call BIS_fnc_returnConfigEntry;
 
 private _description = "";
 switch (true) do
@@ -128,5 +129,8 @@ switch (true) do
 };
 
 _data set ["description", _description];
+
+// Icon
+_data set ["icon", _cfgModule call ENH_fnc_MI_getModuleIcon];
 
 _data

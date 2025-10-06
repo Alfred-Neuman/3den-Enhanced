@@ -12,6 +12,7 @@ class ENH_ModuleInformation
             y = QUOTE(WINDOW_TOPAbs);
             w = QUOTE(WINDOW_W_ATTRIBUTES * GRID_W);
             h = QUOTE(CTRL_DEFAULT_H);
+            moving = 0;
         };
         class Background: ctrlStaticBackground
         {

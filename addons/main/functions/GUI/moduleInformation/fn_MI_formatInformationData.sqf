@@ -50,10 +50,10 @@ private _description = _data get "description";
 // Position
 private _position = format ["<t font='RobotoCondensedBold'>%1 </t>%2", localize "STR_ENH_MAIN_MODULEINFORMATION_POSITION", _data get "position"];
 
-// _duplicate
+// Duplicate
 private _duplicate = format ["<t font='RobotoCondensedBold'>%1 </t>%2", localize "STR_ENH_MAIN_MODULEINFORMATION_DUPLICATE", _data get "duplicate"];
 
-// _direction
+// Direction
 private _direction = format ["<t font='RobotoCondensedBold'>%1 </t>%2", localize "STR_ENH_MAIN_MODULEINFORMATION_DIRECTION", _data get "direction"];
 
 parseText ([_displayName, _configName, _description, _position, _duplicate, _direction] joinString LB_HTML);

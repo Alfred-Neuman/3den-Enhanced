@@ -240,9 +240,12 @@ class CfgFunctions
         {
             file = "\x\enh\addons\main\functions\GUI\moduleInformation";
             class MI_createSyncPreview {};
+            class MI_createSyncPreviewTree {};
             class MI_formatInformationData {};
             class MI_getInformationData {};
+            class MI_getModuleIcon {};
             class MI_onLoad {};
+            class MI_resizeInformationControl {};
         };
         class MoveToLayer
         {
