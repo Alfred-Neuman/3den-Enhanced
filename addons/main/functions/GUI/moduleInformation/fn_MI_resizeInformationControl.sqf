@@ -17,8 +17,6 @@
 
 params ["_ctrlStructuredText"];
 
-_ctrlStructuredText ctrlSetStructuredText _moduleInformation;
-
 // Resize control but only as small as controls group
 _ctrlStructuredText ctrlSetPositionH ((ctrlTextHeight _ctrlStructuredText) max (ctrlPosition (ctrlParentControlsGroup _ctrlStructuredText) # 3));
 _ctrlStructuredText ctrlCommit 0;
