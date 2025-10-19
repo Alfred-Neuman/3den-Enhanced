@@ -2,10 +2,6 @@
     "folders": [
         {
             "path": "."
-        },
-        {
-            "name": "3den-Enhanced.wiki",
-            "path": "../3den-Enhanced.wiki"
         }
     ],
     "settings": {
