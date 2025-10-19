@@ -13,6 +13,8 @@ class ENH_MakeHostage
             if (_this getVariable ['ENH_isHostage', true]) then\
             {\
                 _this switchMove 'Acts_AidlPsitMstpSsurWnonDnon04';\
+                _this disableAI 'MOVE';\
+                _this setCaptive true;\
                 [\
                 _this,\
                 localize 'STR_A3_OM_SYSTEM_QUEST_HOSTAGEHOLDACTION',\
@@ -28,6 +30,10 @@ class ENH_MakeHostage
                     [_target, _actionId] remoteExec ['BIS_fnc_holdActionRemove', 0];\
                     _target setVariable ['ENH_IsHostage', false, true];\
                     _target setVariable ['ENH_WasFreedBy', _caller, true];\
+                    _target enableAI 'MOVE';\
+                    [_target] join (group _caller);\
+                    doStop _target;\
+                    _target setCaptive false;\
                 }\
                 ] call BIS_fnc_holdActionAdd;\
             };\

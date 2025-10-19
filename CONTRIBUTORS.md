@@ -30,3 +30,4 @@
 | Artenis |
 | Pixelated Grunt | minor ESE improvement |
 | Dart | Config |
+| mrschick |
