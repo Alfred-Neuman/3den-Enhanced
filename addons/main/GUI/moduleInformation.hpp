@@ -21,14 +21,19 @@ class ENH_ModuleInformation
             w = QUOTE(WINDOW_W_ATTRIBUTES * GRID_W);
             h = QUOTE(WINDOW_HAbs - 3 * CTRL_DEFAULT_H);
         };
-        class BackgroundSyncPreview: ctrlStaticBackground
+        class BackgroundSyncPreviewTypeSelector: ctrlStaticBackground
         {
-            idc = IDC_MODULEINFORMATION_SYNC_BACKGROUND;
             x = QUOTE(CENTER_X - 0.5 * WINDOW_W_ATTRIBUTES * GRID_W + 1 * GRID_W);
             y = QUOTE(WINDOW_TOPAbs + 0.3 * WINDOW_HAbs + CTRL_DEFAULT_H + 2 * GRID_H);
             w = QUOTE((WINDOW_W_ATTRIBUTES - 2) * GRID_W);
-            h = QUOTE(0.7 * WINDOW_HAbs - 5 * CTRL_DEFAULT_H);
+            h = QUOTE(CTRL_DEFAULT_H);
             colorBackground[] = {COLOR_OVERLAY_RGBA};
+        };
+        class BackgroundSyncPreview: BackgroundSyncPreviewTypeSelector
+        {
+            idc = IDC_MODULEINFORMATION_SYNC_BACKGROUND;
+            y = QUOTE(WINDOW_TOPAbs + 0.3 * WINDOW_HAbs + 2 * CTRL_DEFAULT_H + 2 * GRID_H);
+            h = QUOTE(0.7 * WINDOW_HAbs - 6 * CTRL_DEFAULT_H);
         };
         class Footer: ctrlStaticFooter
         {
@@ -40,6 +45,17 @@ class ENH_ModuleInformation
     };
     class Controls
     {
+        class PreviewType: ctrlToolbox
+        {
+            idc = IDC_MODULEINFORMATION_SYNC_TYPE_SELECTOR;
+            x = QUOTE(CENTER_X - 0.5 * WINDOW_W_ATTRIBUTES * GRID_W + 1 * GRID_W);
+            y = QUOTE(WINDOW_TOPAbs + 0.3 * WINDOW_HAbs + CTRL_DEFAULT_H + 2 * GRID_H);
+            h = QUOTE(CTRL_DEFAULT_H);
+            w = QUOTE(35 * GRID_W);
+            columns = 2;
+            rows = 1;
+            strings[] = {"Map", "Tree"};
+        };
         class Group: ctrlControlsGroup
         {
             x = QUOTE(CENTER_X - 0.5 * WINDOW_W_ATTRIBUTES * GRID_W + 1 * GRID_W);
@@ -58,6 +74,15 @@ class ENH_ModuleInformation
                     colorBackground[] = {COLOR_OVERLAY_RGBA};
                 };
             };
+        };
+        class GroupPreview: ctrlControlsGroup
+        {
+            idc = IDC_MODULEINFORMATION_SYNC_GROUP;
+            x = QUOTE(CENTER_X - 0.5 * WINDOW_W_ATTRIBUTES * GRID_W + 1 * GRID_W);
+            y = QUOTE(WINDOW_TOPAbs + 0.3 * WINDOW_HAbs + 2 * CTRL_DEFAULT_H + 2 * GRID_H);
+            w = QUOTE((WINDOW_W_ATTRIBUTES - 2) * GRID_W);
+            h = QUOTE(0.7 * WINDOW_HAbs - 6 * CTRL_DEFAULT_H);
+            class Controls {};
         };
         class Close: ctrlButtonClose
         {

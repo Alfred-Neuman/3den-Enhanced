@@ -23,11 +23,17 @@ disableSerialization;
 
 params ["_displayModuleInformation", "_logicClass"];
 
-private _ctrlBackgroundSyncPreview = _displayModuleInformation displayCtrl IDC_MODULEINFORMATION_SYNC_BACKGROUND;
+private _ctrlGroupPreview = _displayModuleInformation displayCtrl IDC_MODULEINFORMATION_SYNC_GROUP;
 
-private _ctrlTree = ctrlParent _ctrlBackgroundSyncPreview ctrlCreate ["ctrlTree", -1];
-_ctrlTree ctrlSetPosition (ctrlPosition _ctrlBackgroundSyncPreview);
-_ctrlTree ctrlCommit 0;
+// Clear previous preview
+allControls _ctrlGroupPreview apply {ctrlDelete _x};
+
+ctrlPosition _ctrlGroupPreview params ["", "", "_w", "_h"];
+
+private _ctrlTV = _displayModuleInformation ctrlCreate ["ctrlTree", -1, _ctrlGroupPreview];
+
+_ctrlTV ctrlSetPosition [0, 0, _w, _h];
+_ctrlTV ctrlCommit 0;
 
 private _fnc_createSyncChildren =
 {
@@ -58,12 +64,12 @@ private _fnc_createSyncChildren =
 
     _newParentPath = _parentPath + [_index];
 
-    _ctrlTree tvSetPicture [_newParentPath, _informationHashMap get "icon"];
+    _ctrlTV tvSetPicture [_newParentPath, _informationHashMap get "icon"];
 
     // Store date for selection changed event
-    private _informationCache = _ctrlTree getVariable ["InformationCache", createHashMap];
+    private _informationCache = _ctrlTV getVariable ["InformationCache", createHashMap];
     _informationCache set [_newParentPath, _informationStructText];
-    _ctrlTree setVariable ["InformationCache", _informationCache];
+    _ctrlTV setVariable ["InformationCache", _informationCache];
 
     // Get all children
     private _children = [];
@@ -83,12 +89,12 @@ private _fnc_createSyncChildren =
     } forEach _children;
 };
 
-_ctrlTree ctrlAddEventHandler ["TreeSelChanged",
+_ctrlTV ctrlAddEventHandler ["TreeSelChanged",
 {
-    params ["_ctrlTree", "_path"];
+    params ["_ctrlTV", "_path"];
 
-    private _informationStructText = (_ctrlTree getVariable "InformationCache") get _path;
-    private _ctrlStructuredText = ctrlParent _ctrlTree displayCtrl IDC_MODULEINFORMATION_DESCRIPTION;
+    private _informationStructText = (_ctrlTV getVariable "InformationCache") get _path;
+    private _ctrlStructuredText = ctrlParent _ctrlTV displayCtrl IDC_MODULEINFORMATION_DESCRIPTION;
 
     _ctrlStructuredText ctrlSetStructuredText _informationStructText;
     _ctrlStructuredText call ENH_fnc_MI_resizeInformationControl;
@@ -96,8 +102,10 @@ _ctrlTree ctrlAddEventHandler ["TreeSelChanged",
 
 private _cfgModuleMain = configFile >> "CfgVehicles" >> _logicClass;
 
-[[], _cfgModuleMain, _ctrlTree, _cfgModuleMain] call _fnc_createSyncChildren;
+[[], _cfgModuleMain, _ctrlTV, _cfgModuleMain] call _fnc_createSyncChildren;
 
-tvExpandAll _ctrlTree;
+tvExpandAll _ctrlTV;
+
+_ctrlTV tvSetCurSel [0];
 
 nil;
