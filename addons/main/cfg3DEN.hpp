@@ -96,7 +96,6 @@ class Cfg3DEN
         #include "\x\enh\addons\main\controls\holdAction.hpp"
         #include "\x\enh\addons\main\controls\inputList.hpp"
         #include "\x\enh\addons\main\controls\introText.hpp"
-        #include "\x\enh\addons\main\controls\largerEditMulti.hpp"
         #include "\x\enh\addons\main\controls\mapIndicators.hpp"
         #include "\x\enh\addons\main\controls\markerColor.hpp"
         #include "\x\enh\addons\main\controls\markerShape.hpp"

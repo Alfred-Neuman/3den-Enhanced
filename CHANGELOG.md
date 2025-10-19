@@ -15,6 +15,7 @@
     - Fixed fleeing value in the group debug option would not show a value
     - Debug option to show triggers would not display data
     - Fixed draw triggers and dynamic simulation debug view would not work together
+- Removed larger edit edit controls
 
 # 8.7.1
 ## ADDED
