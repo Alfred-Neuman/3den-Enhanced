@@ -53,107 +53,35 @@ class ENH_HoldAction: Title
             idc = IDC_ATTRIBUTE_CONTROL_02;
             y = QUOTE(3 * CTRL_DEFAULT_H + 10 * pixelH);
         };
-        // Condition show
-        class ConditionShowBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(5 * CTRL_DEFAULT_H + 2 * GRID_H + 15 * pixelH);
-        };
-        class ConditionShowTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_HOLDACTION_CONDITIONSHOW_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_HOLDACTION_CONDITIONSHOW_TOOLTIP";
-            y = QUOTE(5 * CTRL_DEFAULT_H + 15 * pixelH);
-        };
-        class ConditionShow: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class ConditionShowGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_03;
-            y = QUOTE(5 * CTRL_DEFAULT_H + 5 * GRID_H + 15 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(5 * CTRL_DEFAULT_H + 15 * pixelH);
         };
-        // Condition progress
-        class ConditionProgressBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(10 * CTRL_DEFAULT_H + 2 * GRID_H + 20 * pixelH);
-        };
-        class ConditionProgressTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_HOLDACTION_CONDITIONPROGRESS_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_HOLDACTION_CONDITIONPROGRESS_TOOLTIP";
-            y = QUOTE(10 * CTRL_DEFAULT_H + 20 * pixelH);
-        };
-        class ConditionProgress: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class ConditionProgressGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_04;
-            y = QUOTE(10 * CTRL_DEFAULT_H + 5 * GRID_H + 20 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(10 * CTRL_DEFAULT_H + 20 * pixelH);
         };
-        // Code start
-        class CodeStartBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(15 * CTRL_DEFAULT_H + 2 * GRID_H + 25 * pixelH);
-        };
-        class CodeStartTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_HOLDACTION_CODESTART_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_HOLDACTION_CODESTART_TOOLTIP";
-            y = QUOTE(15 * CTRL_DEFAULT_H + 25 * pixelH);
-        };
-        class CodeStart: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class CodeStartGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_05;
-            y = QUOTE(15 * CTRL_DEFAULT_H + 5 * GRID_H + 25 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(15 * CTRL_DEFAULT_H + + 25 * pixelH);
         };
-        // Code progress
-        class CodeProgressBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(20 * CTRL_DEFAULT_H + 2 * GRID_H + 30 * pixelH);
-        };
-        class CodeProgressTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_HOLDACTION_CODEPROGRESS_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_HOLDACTION_CODEPROGRESS_TOOLTIP";
-            y = QUOTE(20 * CTRL_DEFAULT_H + 30 * pixelH);
-        };
-        class CodeProgress: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class CodeProgressGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_06;
-            y = QUOTE(20 * CTRL_DEFAULT_H + 5 * GRID_H + 30 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(20 * CTRL_DEFAULT_H + 30 * pixelH);
         };
-        // Code completion
-        class CodeCompleteBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(25 * CTRL_DEFAULT_H + 2 * GRID_H + 35 * pixelH);
-        };
-        class CodeCompleteTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_HOLDACTION_CODECOMPLETE_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_HOLDACTION_CODECOMPLETE_TOOLTIP";
-            y = QUOTE(25 * CTRL_DEFAULT_H + 35 * pixelH);
-        };
-        class CodeComplete: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class CodeCompleteGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_07;
-            y = QUOTE(25 * CTRL_DEFAULT_H + 5 * GRID_H + 35 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(25 * CTRL_DEFAULT_H + 35 * pixelH);
         };
-        // Code interrupt
-        class CodeInterruptBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(30 * CTRL_DEFAULT_H + 2 * GRID_H + 40 * pixelH);
-        };
-        class CodeInterruptTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_HOLDACTION_CODEINTERRUPT_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_HOLDACTION_CODEINTERRUPT_TOOLTIP";
-            y = QUOTE(30 * CTRL_DEFAULT_H + 40 * pixelH);
-        };
-        class CodeInterrupt: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class CodeInterruptGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_08;
-            y = QUOTE(30 * CTRL_DEFAULT_H + 5 * GRID_H + 40 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(30 * CTRL_DEFAULT_H + 40 * pixelH);
         };
         class DurationTitle: Title
         {

@@ -152,7 +152,7 @@
 
 private _additionalIcons = profileNamespace getVariable ["ENH_EditorPreferences_HoldActionIcons", []];
 
-// Prevent issues if user entered custom with in quotes
+// Prevent issues if user entered custom icons with quotes
 {
     if (_x select [0, 1] == """") then
     {
@@ -206,12 +206,29 @@ _ctrlIconProgress ctrlAddEventHandler ["ButtonClick", _clickCode];
 
 _ctrlIconProgress ctrlSetText _iconProgress;
 
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03) ctrlSetText _conditionShow;
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04) ctrlSetText _conditionProgress;
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05) ctrlSetText _codeStart;
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_06) ctrlSetText _codeProgress;
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_07) ctrlSetText _codeCompletion;
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_08) ctrlSetText _codeInterrupt;
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_HOLDACTION_CONDITIONSHOW_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_HOLDACTION_CONDITIONSHOW_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _conditionShow;
+
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_HOLDACTION_CONDITIONPROGRESS_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_HOLDACTION_CONDITIONPROGRESS_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _conditionProgress;
+
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_HOLDACTION_CODESTART_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_HOLDACTION_CODESTART_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _codeStart;
+
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_06 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_HOLDACTION_CODEPROGRESS_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_06 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_HOLDACTION_CODEPROGRESS_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_06 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _codeProgress;
+
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_07 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_HOLDACTION_CODECOMPLETE_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_07 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_HOLDACTION_CODECOMPLETE_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_07 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _codeCompletion;
+
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_08 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_HOLDACTION_CODEINTERRUPT_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_08 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_HOLDACTION_CODEINTERRUPT_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_08 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _codeInterrupt;
 
 [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_09), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_10), "s"] call BIS_fnc_initSliderValue;
 [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_09), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_10), "s", _duration] call BIS_fnc_initSliderValue;
@@ -231,12 +248,12 @@ _ctrlIconProgress ctrlSetText _iconProgress;
     (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText "";
     (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
     (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_02) ctrlSetText "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03) ctrlSetText "true";
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04) ctrlSetText "true";
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05) ctrlSetText "";
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_06) ctrlSetText "";
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_07) ctrlSetText "";
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_08) ctrlSetText "";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "true";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "true";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_06 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_07 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_08 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "";
     [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_09), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_10), "s", 10] call BIS_fnc_initSliderValue;
     [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_11), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_12), "", 1000] call BIS_fnc_initSliderValue;
     (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_13) cbSetChecked false;
