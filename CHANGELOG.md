@@ -15,7 +15,6 @@
     - Fixed fleeing value in the group debug option would not show a value
     - Debug option to show triggers would not display data
     - Fixed draw triggers and dynamic simulation debug view would not work together
-- Removed larger edit controls
 - Fixed edit boxes would prevent scrolling in some cases
 - Fixed hold action edit boxes would in some cases not show entire text (#453)
 - Improved Unit Trait Description's localization
