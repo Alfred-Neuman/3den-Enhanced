@@ -4,8 +4,8 @@
 
 // Configs
 #include "\x\enh\addons\main\cfgPatches.hpp"
-#include "\x\enh\addons\main\cfg3DEN.hpp"
-#include "\x\enh\addons\main\cfgFunctions.hpp"
+#include "\x\enh\addons\main\cfg3DEN\cfg3DEN.hpp"
+#include "\x\enh\addons\main\cfgFunctions\cfgFunctions.hpp"
 #include "\x\enh\addons\main\display3DEN\display3DEN.hpp"
 #include "\x\enh\addons\main\cfgFontFamilies.hpp"
 #include "\x\enh\addons\main\cfgCommands.hpp"
