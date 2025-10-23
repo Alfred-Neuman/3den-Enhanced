@@ -5,7 +5,7 @@ class CfgFunctions
         tag = "ENH";
         class 3DENCommandPalette
         {
-            file = "\x\enh\addons\main\functions\GUI\3DENCommandPalette";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\3DENCommandPalette";
             class 3DENCommandPalette_addCommand {};
             class 3DENCommandPalette_collectCommands {};
             class 3DENCommandPalette_execCommand {};
@@ -15,7 +15,7 @@ class CfgFunctions
         };
         class 3DENEventHandlers
         {
-            file = "\x\enh\addons\main\functions\3DENEventHandlers";
+            file = "\x\enh\addons\main\cfgFunctions\3DENEventHandlers";
             class EH_init {};
             class EH_onMissionLoad {};
             class EH_onMissionNew {};
@@ -25,7 +25,7 @@ class CfgFunctions
         };
         class 3DENInterface
         {
-            file = "\x\enh\addons\main\functions\3DENInterface";
+            file = "\x\enh\addons\main\cfgFunctions\3DENInterface";
             class 3DENMinimap {};
             class 3DENShowCustomMarkerColorAndShape {};
             class adjustTitleTextWidth {};
@@ -37,7 +37,7 @@ class CfgFunctions
         };
         class 3DENRadio
         {
-            file = "\x\enh\addons\main\functions\GUI\3DENRadio";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\3DENRadio";
             class 3DENRadio_exportClassname {};
             class 3DENRadio_handlePlaylist {};
             class 3DENRadio_onLoad {};
@@ -48,7 +48,7 @@ class CfgFunctions
         };
         class Attributes
         {
-            file = "\x\enh\addons\main\functions\attributes";
+            file = "\x\enh\addons\main\cfgFunctions\attributes";
             class markerColor_onAttributeLoad {};
             class markerColor_onAttributeSave {};
             class markerShape_onAttributeLoad {};
@@ -93,17 +93,17 @@ class CfgFunctions
         };
         class AttributeSearch
         {
-            file = "\x\enh\addons\main\functions\GUI\attributeSearch";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\attributeSearch";
             class attributeSearch_onLoad {};
         };
         class BriefingEditor
         {
-            file = "\x\enh\addons\main\functions\GUI\briefingEditor";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\briefingEditor";
             class briefingEditor {};
         };
         class CfgSentencesBrowser
         {
-            file = "\x\enh\addons\main\functions\GUI\CFGS";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\CFGS";
             class CFGS_changeFilter {};
             class CFGS_changePage {};
             class CFGS_getCfgSentences {};
@@ -114,7 +114,7 @@ class CfgFunctions
         };
         class Common
         {
-            file = "\x\enh\addons\main\functions\common";
+            file = "\x\enh\addons\main\cfgFunctions\common";
             class all3DENSelected {};
             class array3FromClipboard {};
             class createHashValue {};
@@ -129,12 +129,12 @@ class CfgFunctions
         };
         class Debug
         {
-            file = "\x\enh\addons\main\functions\debug";
+            file = "\x\enh\addons\main\cfgFunctions\debug";
             class productInfo {};
         };
         class ESE
         {
-            file = "\x\enh\addons\main\functions\GUI\ESE";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\ESE";
             class ESE_addItem {};
             class ESE_applyAttribute {};
             class ESE_changeFilter {};
@@ -160,7 +160,7 @@ class CfgFunctions
         };
         class FunctionsViewer
         {
-            file = "\x\enh\addons\main\functions\GUI\functionsViewer";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\functionsViewer";
             class functionsViewer_copy {};
             class functionsViewer_fillCtrlTV {};
             class functionsViewer_getFunctionsData {};
@@ -174,7 +174,7 @@ class CfgFunctions
         };
         class Garrison
         {
-            file = "\x\enh\addons\main\functions\GUI\garrison";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\garrison";
             class garrison_onLoad {};
             class garrison_draw {};
             class garrison_fillBuildings {};
@@ -183,7 +183,7 @@ class CfgFunctions
         };
         class Garrison2
         {
-            file = "\x\enh\addons\main\functions\garrison2";
+            file = "\x\enh\addons\main\cfgFunctions\garrison2";
             class garrison2_draw3D {};
             class garrison2_exit {};
             class garrison2_fillBuildingPositions {};
@@ -196,7 +196,7 @@ class CfgFunctions
         #ifdef ISDEV
         class Internal
         {
-            file = "\x\enh\addons\main\functions\internal";
+            file = "\x\enh\addons\main\cfgFunctions\internal";
             class checkShortCutsDuplicates {};
             class exportAttributesToGitHub {};
             class exportContextMenuToGitHub {};
@@ -210,7 +210,7 @@ class CfgFunctions
         #endif
         class Log
         {
-            file = "\x\enh\addons\main\functions\log";
+            file = "\x\enh\addons\main\cfgFunctions\log";
             class 3DENLog {};
             class exportGUIDefines {};
             class exportLoadout {};
@@ -218,7 +218,7 @@ class CfgFunctions
         };
         class Misc
         {
-            file = "\x\enh\addons\main\functions\misc";
+            file = "\x\enh\addons\main\cfgFunctions\misc";
             class alignEntities {};
             class centerMapOnSelection {};
             class createBackupMissionSQM {};
@@ -238,7 +238,7 @@ class CfgFunctions
         };
         class ModuleInformation
         {
-            file = "\x\enh\addons\main\functions\GUI\moduleInformation";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\moduleInformation";
             class MI_createSyncPreview {};
             class MI_createSyncPreviewTree {};
             class MI_formatInformationData {};
@@ -249,45 +249,45 @@ class CfgFunctions
         };
         class MoveToLayer
         {
-            file = "\x\enh\addons\main\functions\GUI\moveTolayer";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\moveTolayer";
             class moveToLayer_onLoad {};
             class moveToLayer_move {};
         };
         class NameObjects
         {
-            file = "\x\enh\addons\main\functions\GUI\nameObjects";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\nameObjects";
             class nameObjects {};
         };
         class PlacementTools
         {
-            file = "\x\enh\addons\main\functions\GUI\placementTools";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\placementTools";
             class placementTools {};
         };
         class RPTViewer
         {
-            file = "\x\enh\addons\main\functions\GUI\RPTViewer";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\RPTViewer";
             class RPTViewer {};
         };
         class SAM
         {
-            file = "\x\enh\addons\main\functions\GUI\SAM";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\SAM";
             class SAM {};
         };
         class SelectionFilter
         {
-            file = "\x\enh\addons\main\functions\GUI\selectionFilter";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\selectionFilter";
             class selectionFilter_init {};
         };
         class TextureFinder
         {
-            file = "\x\enh\addons\main\functions\GUI\TextureFinder";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\TextureFinder";
             class textureFinder_fillList {};
             class textureFinder_findTextures {};
             class textureFinder_updatePreview {};
         };
         class VariableViewer
         {
-            file = "\x\enh\addons\main\functions\GUI\variableViewer";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\variableViewer";
             class variableViewer_delete {};
             class variableViewer_fillLNB {};
             class variableViewer_getNamespace {};
@@ -299,7 +299,7 @@ class CfgFunctions
         };
         class ZeusAddons
         {
-            file = "\x\enh\addons\main\functions\GUI\ZeusAddons";
+            file = "\x\enh\addons\main\cfgFunctions\GUI\ZeusAddons";
             class zeusAddons {};
         };
     };

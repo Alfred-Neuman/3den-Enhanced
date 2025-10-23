@@ -9700,16 +9700,16 @@
             <Chinesesimp>设定该单位能否治愈其他单位</Chinesesimp>
         </Key>
         <Key ID="STR_ENH_MAIN_UNITTRAITS_SUBCATEGORY">
-            <English>These settings are have no effect if ACE is loaded, except for the UAV Hacker trait.</English>
-            <Czech>Tato nastavení nemají žádný vliv, pokud je načten ACE, s výjimkou vlastnosti UAV Hacker.</Czech>
-            <French>Ces paramètres n'ont aucun effet si ACE est chargé, à l'exception du trait UAV Hacker.</French>
-            <Spanish>Estos ajustes no tienen efecto si ACE está cargado, excepto para el rasgo UAV Hacker.</Spanish>
-            <Italian>Queste impostazioni non hanno effetto se ACE è caricato, tranne che per il tratto UAV Hacker.</Italian>
-            <Polish>Ustawienia te nie mają żadnego wpływu, jeśli ACE jest załadowane, z wyjątkiem cechy Haker UAV.</Polish>
-            <Russian>Эти настройки не имеют никакого эффекта, если загружен ACE, за исключением признака UAV Hacker.</Russian>
+            <English>These settings have no effect when ACE is loaded, with the exception of the UAV Hacker property.</English>
+            <Czech>Tato nastavení nemají žádný vliv, když je načten ACE, s výjimkou vlastnosti UAV Hacker.</Czech>
+            <French>Ces paramètres n'ont aucun effet lorsque ACE est chargé, à l'exception de la propriété UAV Hacker.</French>
+            <Spanish>Estos ajustes no tienen ningún efecto cuando se carga ACE, con la excepción de la propiedad UAV Hacker.</Spanish>
+            <Italian>Queste impostazioni non hanno alcun effetto quando ACE è caricato, ad eccezione della proprietà UAV Hacker.</Italian>
+            <Polish>Te ustawienia nie mają wpływu, gdy ACE jest załadowany, z wyjątkiem właściwości UAV Hacker.</Polish>
+            <Russian>Эти настройки не имеют эффекта при загрузке ACE, за исключением свойства UAV Hacker.</Russian>
             <German>Diese Einstellungen haben keine Auswirkungen, wenn ACE geladen ist, mit Ausnahme der Eigenschaft UAV Hacker.</German>
-            <Chinese>如果已載入 ACE，除了 UAV Hacker 特質之外，這些設定都不會有任何影響。</Chinese>
-            <Chinesesimp>如果已加载 ACE，这些设置将不起作用，但 UAV 黑客特质除外。</Chinesesimp>
+            <Chinese>當載入 ACE 時，這些設定均無效，唯獨無人機駭客屬性除外。</Chinese>
+            <Chinesesimp>当加载ACE时，这些设置均无效，UAV黑客属性除外。</Chinesesimp>
         </Key>
         <Key ID="STR_ENH_MAIN_UNITTRAITS_UAVHACKER_DISPLAYNAME">
             <English>Is UAV Hacker?</English>

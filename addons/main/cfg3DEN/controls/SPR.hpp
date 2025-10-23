@@ -67,25 +67,14 @@ class ENH_SPR: Title
             idc = IDC_ATTRIBUTE_CONTROL_04;
             y = QUOTE(3 * CTRL_DEFAULT_H + 15 * pixelH);
         };
-        class CodeBackground: ENH_3DEN_Attribute_Control_EditMulti5_Background
-        {
-            y = QUOTE(4 * CTRL_DEFAULT_H + 2 * GRID_H + 20 * pixelH);
-        };
-        class CodeTitle: ENH_3DEN_Attribute_Control_EditMulti5_Title
-        {
-            text = "$STR_ENH_MAIN_SPR_ONRESPAWNCODE_DISPLAYNAME";
-            tooltip = "$STR_ENH_MAIN_SPR_ONRESPAWNCODE_TOOLTIP";
-            y = QUOTE(4 * CTRL_DEFAULT_H + 20 * pixelH);
-        };
-        class Code: ENH_3DEN_Attribute_Control_EditMulti5_Edit
+        class CodeGroup: ENH_3DEN_Attribute_Control_EditMultiCode5_Group
         {
             idc = IDC_ATTRIBUTE_CONTROL_05;
-            y = QUOTE(4 * CTRL_DEFAULT_H + 5 * GRID_H + 20 * pixelH);
-            autocomplete = "scripting";
+            y = QUOTE(4 * CTRL_DEFAULT_H + 20 * pixelH);
         };
         class Reset: ENH_3DEN_Attribute_Control_ResetButton
         {
-            y = QUOTE(9 * CTRL_DEFAULT_H + 30 * pixelH);
+            y = QUOTE(9 * CTRL_DEFAULT_H + 25 * pixelH);
         };
     };
 };

@@ -51,7 +51,9 @@ _ctrlComboRuleset lbSetCurSel _ruletSet;
 
 (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04) cbSetChecked _restoreLoadout;
 
-(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05) ctrlSetText _onRespawnCode;
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText localize "$STR_ENH_MAIN_SPR_ONRESPAWNCODE_DISPLAYNAME";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetTooltip localize "$STR_ENH_MAIN_SPR_ONRESPAWNCODE_TOOLTIP";
+(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText _onRespawnCode;
 
 // Add reset event to reset button
 (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_BUTTON_RESET) ctrlAddEventHandler ["ButtonClick",
@@ -62,5 +64,5 @@ _ctrlComboRuleset lbSetCurSel _ruletSet;
     [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_02), "s", 20] call BIS_fnc_initSliderValue;
     (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_03) cbSetChecked false;
     (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_04) cbSetChecked false;
-    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05) ctrlSetText "";
+    (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_05 controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_01) ctrlSetText "";
 }];

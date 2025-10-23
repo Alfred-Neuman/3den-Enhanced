@@ -1,5 +1,5 @@
 #include "\x\enh\addons\main\script_component.hpp"
-#include "\x\enh\addons\main\functions\GUI\3DENCommandPalette\defines.inc"
+#include "\x\enh\addons\main\cfgFunctions\GUI\3DENCommandPalette\defines.inc"
 
 /*
     Author: R3vo
