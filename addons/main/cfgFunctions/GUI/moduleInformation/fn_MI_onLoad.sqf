@@ -26,7 +26,6 @@ private _moduleInformation = [[configOf _module] call ENH_fnc_MI_getInformationD
 
 CTRL(IDC_MODULEINFORMATION_DESCRIPTION) call ENH_fnc_MI_resizeInformationControl;
 
-// [_display, typeOf _module] call ENH_fnc_MI_createSyncPreviewTree;
 [_display, typeOf _module] call ENH_fnc_MI_createSyncPreview;
 
 CTRL(IDC_MODULEINFORMATION_SYNC_TYPE_SELECTOR) ctrlAddEventHandler ["ToolBoxSelChanged",
