@@ -150,7 +150,6 @@ class ENH_SPR
                         };\
                         sleep ENH_SPR_Delay;\
                         removeMissionEventHandler ['draw3D', _respawnEH];\
-                        [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;\
                     };\
                     _unit call ENH_fnc_SPR_respawn;\
                 };\
