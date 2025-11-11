@@ -1,3 +1,6 @@
+## CHANGED
+- French translation update by Alfred-Neuman
+
 # 8.7.1
 ## ADDED
 - Added fn_iterTree.sqf (internal use only)
