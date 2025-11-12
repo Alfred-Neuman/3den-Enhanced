@@ -17,7 +17,7 @@
 
 if (!is3DEN) exitWith {};
 
-0 spawn
+spawn
 {
     with uiNamespace do
     {

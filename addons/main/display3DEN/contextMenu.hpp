@@ -111,7 +111,7 @@ class ENH_LogObjectInfo: ENH_LogFactions
 };
 class ENH_MeasureDistance
 {
-    action = "0 spawn ENH_fnc_measureDistance";
+    action = "spawn ENH_fnc_measureDistance";
     text = "$STR_ENH_MAIN_CONTEXTMENU_MEASUREDISTANCE";
     picture = "\x\enh\addons\main\data\ruler_ca.paa";
     conditionShow = "1";
@@ -176,5 +176,5 @@ class ENH_SelectionFilter
 //Modify the original behaviour. Now the map will be moved as well
 class MoveCamera
 {
-    action = "0 spawn ENH_fnc_centerMapOnSelection";
+    action = "spawn ENH_fnc_centerMapOnSelection";
 };

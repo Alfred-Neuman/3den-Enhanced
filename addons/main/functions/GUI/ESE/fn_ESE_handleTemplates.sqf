@@ -9,7 +9,7 @@ switch _mode do
 {
     case "create":
     {
-        0 spawn
+        spawn
         {
             private _displayTemplateData = (uiNamespace getVariable "ENH_Display_ESE") createDisplay "ENH_TemplateData";
 
