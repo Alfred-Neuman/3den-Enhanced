@@ -24,7 +24,7 @@ call ENH_fnc_3DENRadio_toggleRadio;
 // Collapse left tree view (entity list). A small delay is needed to let the list fully load first
 if (profileNamespace getVariable ["ENH_EditorPreferences_Interface_CollapseEntityList", false]) then
 {
-    0 spawn
+    spawn
     {
         sleep 0.1;
         ["collapseEntityList"] call BIS_fnc_3DENInterface;
