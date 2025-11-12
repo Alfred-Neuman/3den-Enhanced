@@ -1,4 +1,23 @@
+# 8.7.2
 ## CHANGED
+- Module Information
+    - Complete overhaul of Module Information UI. It now shows entites that can be synced similar to the old editor
+    - Module Information UI would not show all descriptions of all modules
+
+- Hostage Attriubute
+    - Hostage will automatically be placed in the captive state, as well as out of it when freed, so that they aren't engaged by nearby AI
+    - "MOVE" AI will be disabled while tied up, to prevent the hostage from turning around to look at nearby units
+    - When freed, the hostage will automatically join the caller's group and run a doStop, preventing it from running around on its own until commanded to regroup or move to a new location by the group's leader.
+
+- Debug Options
+    - Improved visualization of triggers when "Show Triggers" debug option is enabled
+    - Unified debug option  hint style
+    - Fixed fleeing value in the group debug option would not show a value
+    - Debug option to show triggers would not display data
+    - Fixed draw triggers and dynamic simulation debug view would not work together
+- Fixed edit boxes would prevent scrolling in some cases
+- Fixed hold action edit boxes would in some cases not show entire text (#453)
+- Improved Unit Trait Description's localization
 - French translation update by Alfred-Neuman
 
 # 8.7.1
