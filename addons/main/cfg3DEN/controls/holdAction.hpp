@@ -2,7 +2,7 @@ class ENH_HoldAction: Title
 {
     attributeLoad = "[_this, _value] call ENH_fnc_holdAction_onAttributeLoad";
     attributeSave = "_this call ENH_fnc_holdAction_onAttributeSave";
-    h = QUOTE(41 * CTRL_DEFAULT_H + 75 * pixelH);
+    h = QUOTE(42 * CTRL_DEFAULT_H + 80 * pixelH);
     class Controls: Controls
     {
         class NameTitle: Title
@@ -157,9 +157,25 @@ class ENH_HoldAction: Title
             idc = IDC_ATTRIBUTE_CONTROL_15;
             y = QUOTE(39 * CTRL_DEFAULT_H + 65 * pixelH);
         };
+        class RadiusTitle: Title
+        {
+            text = "$STR_ENH_MAIN_HOLDACTION_RADIUS_DISPLAYNAME";
+            y = QUOTE(40 * CTRL_DEFAULT_H + 70 * pixelH);
+        };
+        class RadiusValue: DurationValue
+        {
+            idc = IDC_ATTRIBUTE_CONTROL_16;
+            y = QUOTE(40 * CTRL_DEFAULT_H + 70 * pixelH);
+            sliderRange[] = {1, 1000};
+        };
+        class RadiusEdit: DurationEdit
+        {
+            idc = IDC_ATTRIBUTE_CONTROL_17;
+            y = QUOTE(40 * CTRL_DEFAULT_H + 70 * pixelH);
+        };
         class Reset: ENH_3DEN_Attribute_Control_ResetButton
         {
-            y = QUOTE(40 * CTRL_DEFAULT_H + 70 * pixelH);
+            y = QUOTE(41 * CTRL_DEFAULT_H + 75 * pixelH);
         };
     };
 };

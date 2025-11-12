@@ -17,7 +17,7 @@ class ENH_HoldAction
             property = "ENH_HoldAction";
             control = "ENH_HoldAction";
             expression = "\
-            _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow', '_removeAfterUse'];\
+            _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow', '_removeAfterUse', '_radius'];\
             if (!is3DEN && (_name != '')) then\
             {\
                 if _removeAfterUse then\
@@ -40,11 +40,12 @@ class ENH_HoldAction
                     _priority,\
                     _removeAfterUse,\
                     _showUnconscious,\
-                    _showWindow\
+                    _showWindow,\
+                    _radius\
                 ] remoteExecCall ['BIS_fnc_holdActionAdd', 0, _this];\
             };";
             condition = "1 - logicModule";
-            defaultValue = "['', '\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa', '\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa', 'true', 'true', '', '', '', '', 10, 1000, false, true, true]";
+            defaultValue = "['', '\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa', '\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa', 'true', 'true', '', '', '', '', 10, 1000, false, true, true, 15]";
         };
     };
 };

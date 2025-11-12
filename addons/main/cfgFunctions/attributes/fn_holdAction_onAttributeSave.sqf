@@ -31,5 +31,6 @@ params ["_ctrlGroup"];
     sliderPosition (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_11),
     cbChecked (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_13),
     cbChecked (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_14),
-    cbChecked (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_15)
+    cbChecked (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_15),
+    sliderPosition (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_16)
 ];

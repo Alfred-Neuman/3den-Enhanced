@@ -180,7 +180,8 @@ _value params
     "_priority",
     "_showUnconscious",
     "_showWindow",
-    "_removeAfterUse"
+    "_removeAfterUse",
+    "_radius"
 ];
 
 (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_00) ctrlSetText _name;
@@ -235,6 +236,9 @@ _ctrlIconProgress ctrlSetText _iconProgress;
 
 [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_11), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_12), ""] call BIS_fnc_initSliderValue;
 [(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_11), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_12), "", _priority] call BIS_fnc_initSliderValue;
+
+[(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_16), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_17), ""] call BIS_fnc_initSliderValue;
+[(_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_16), (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_17), "", _radius] call BIS_fnc_initSliderValue;
 
 (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_13) cbSetChecked _showUnconscious;
 (_ctrlGroup controlsGroupCtrl IDC_ATTRIBUTE_CONTROL_14) cbSetChecked _showWindow;
