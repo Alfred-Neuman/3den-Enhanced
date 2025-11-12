@@ -17,7 +17,7 @@
 
 disableSerialization;
 
-params [["_isVirtual", [-1], [true, 0]]];
+params [["_isVirtual", -1, [true, 0]]];
 
 private _display = uiNamespace getVariable "ENH_Display_ESE";
 private _ctrlInventory = CTRL(IDC_ESE_INVENTORYLIST);
