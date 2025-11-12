@@ -17,7 +17,7 @@ class ENH_DynamicGroups
                     if (isServer) then {['Initialize'] call BIS_fnc_dynamicGroups};\
                     if (hasInterface) then\
                     {\
-                        0 spawn\
+                        spawn\
                         {\
                             scriptName 'ENH_Attribute_DynamicGroups';\
                             waitUntil {!isNull player};\

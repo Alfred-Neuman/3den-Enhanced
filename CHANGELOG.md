@@ -1,4 +1,7 @@
 # 8.7.2
+## ADDED
+- Hold Action now supports radius
+
 ## CHANGED
 - Module Information
     - Complete overhaul of Module Information UI. It now shows entites that can be synced similar to the old editor
@@ -19,6 +22,7 @@
 - Fixed hold action edit boxes would in some cases not show entire text (#453)
 - Improved Unit Trait Description's localization
 - French translation update by Alfred-Neuman
+- Removed 0 infront of spawn were applicable
 
 # 8.7.1
 ## ADDED
