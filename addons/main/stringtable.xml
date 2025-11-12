@@ -6772,6 +6772,18 @@
             <Chinese>優先級</Chinese>
             <Chinesesimp>优先级</Chinesesimp>
         </Key>
+        <Key ID="STR_ENH_MAIN_HOLDACTION_RADIUS_DISPLAYNAME">
+            <English>Radius</English>
+            <Czech>Poloměr</Czech>
+            <French>Rayon</French>
+            <Spanish>Radio</Spanish>
+            <Italian>Raggio</Italian>
+            <Polish>Promień</Polish>
+            <Russian>Радиус</Russian>
+            <German>Radius</German>
+            <Chinese>半徑</Chinese>
+            <Chinesesimp>半径</Chinesesimp>
+        </Key>
         <Key ID="STR_ENH_MAIN_HOLDACTION_REMOVEONUSE_DISPLAYNAME">
             <English>Remove when used</English>
             <French>Retirer en cas d'utilisation</French>

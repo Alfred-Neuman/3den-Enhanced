@@ -1,4 +1,7 @@
 # 8.7.2
+## ADDED
+- Hold Action now supports radius
+
 ## CHANGED
 - Module Information
     - Complete overhaul of Module Information UI. It now shows entites that can be synced similar to the old editor
