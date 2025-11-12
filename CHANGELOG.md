@@ -18,6 +18,7 @@
 - Fixed edit boxes would prevent scrolling in some cases
 - Fixed hold action edit boxes would in some cases not show entire text (#453)
 - Improved Unit Trait Description's localization
+- Removed 0 infront of spawn were applicable
 
 # 8.7.1
 ## ADDED

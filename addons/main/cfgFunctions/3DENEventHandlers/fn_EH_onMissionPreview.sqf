@@ -15,4 +15,4 @@
     -
 */
 
-0 spawn ENH_fnc_debugOptions_init;
+spawn ENH_fnc_debugOptions_init;
